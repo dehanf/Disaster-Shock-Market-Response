@@ -1,0 +1,277 @@
+symbol,sector
+TYRE,Automobiles
+SEYB,Banks
+SAMP,Banks
+COMB,Banks
+HDFC,Banks
+DFCC,Banks
+HNB,Banks
+NTB,Banks
+NDB,Banks
+PABC,Banks
+SDB,Banks
+CBNK,Banks
+ABL,Banks
+UBC,Banks
+JKH,Capital Goods
+ACL,Capital Goods
+HHL,Capital Goods
+AFS,Capital Goods
+AEL,Capital Goods
+TILE,Capital Goods
+DOCK,Capital Goods
+VONE,Capital Goods
+CSLK,Capital Goods
+SIRA,Capital Goods
+EBCR,Capital Goods
+HAYL,Capital Goods
+MEL,Capital Goods
+SHL,Capital Goods
+RHL,Capital Goods
+RCL,Capital Goods
+LWL,Capital Goods
+KCAB,Capital Goods
+CIND,Capital Goods
+LITE,Capital Goods
+ASHO,Capital Goods
+SPEN,Capital Goods
+OFEQ,Capital Goods
+RICH,Capital Goods
+LCEY,Capital Goods
+BRWN,Capital Goods
+LUMX,Capital Goods
+CERA,Capital Goods
+CFLB,Capital Goods
+PARA,Commercial Services
+EXT,Commercial Services
+GEST,Commercial Services
+EML,Commercial Services
+CPRT,Commercial Services
+LPRT,Commercial Services
+CARE,Commercial Services
+TAP,Consumer Durables
+DPL,Consumer Durables
+ABAN,Consumer Durables
+RGEM,Consumer Durables
+TJL,Consumer Durables
+MGT,Consumer Durables
+HEXP,Consumer Durables
+GREG,Consumer Durables
+HELA,Consumer Durables
+BLUE,Consumer Durables
+CHOT,Consumer Services
+BRR,Consumer Services
+SIGV,Consumer Services
+JETS,Consumer Services
+REEF,Consumer Services
+AHUN,Consumer Services
+KHL,Consumer Services
+PEG,Consumer Services
+TANG,Consumer Services
+SERV,Consumer Services
+CITW,Consumer Services
+EDEN,Consumer Services
+AHPL,Consumer Services
+CITH,Consumer Services
+SHOT,Consumer Services
+HUNA,Consumer Services
+TRAN,Consumer Services
+MRH,Consumer Services
+BERU,Consumer Services
+RENU,Consumer Services
+RCH,Consumer Services
+LHL,Consumer Services
+GHLL,Consumer Services
+MARA,Consumer Services
+RHTL,Consumer Services
+HSIG,Consumer Services
+RFL,Consumer Services
+TAJ,Consumer Services
+RPBH,Consumer Services
+NEH,Consumer Services
+KHC,Consumer Services
+STAF,Consumer Services
+CONN,Consumer Services
+PALM,Consumer Services
+SEMB,Diversified Financials
+UBF,Diversified Financials
+KZOO,Diversified Financials
+VFIN,Diversified Financials
+WLTH,Diversified Financials
+COCR,Diversified Financials
+CRL,Diversified Financials
+HNBF,Diversified Financials
+FCT,Diversified Financials
+MBSL,Diversified Financials
+PLC,Diversified Financials
+LOLC,Diversified Financials
+LOFC,Diversified Financials
+CINV,Diversified Financials
+SFIN,Diversified Financials
+CFVF,Diversified Financials
+AAF,Diversified Financials
+LFIN,Diversified Financials
+AMF,Diversified Financials
+GUAR,Diversified Financials
+CFIN,Diversified Financials
+CALH,Diversified Financials
+MERC,Diversified Financials
+CALF,Diversified Financials
+CALT,Diversified Financials
+LCBF,Diversified Financials
+ASIY,Diversified Financials
+SDF,Diversified Financials
+AFSL,Diversified Financials
+CDB,Diversified Financials
+LVEN,Diversified Financials
+ALLI,Diversified Financials
+CFI,Diversified Financials
+SFCL,Diversified Financials
+PMB,Diversified Financials
+BFN,Diversified Financials
+CIT,Diversified Financials
+AMCL,Diversified Financials
+ACAP,Diversified Financials
+WAPO,Diversified Financials
+LIOC,Energy
+LGL,Energy
+TESS,Food Retailing
+CARG,Food Retailing
+CTHR,Food Retailing
+RAL,Food & Beverage
+DIST,Food & Beverage
+BIL,Food & Beverage
+NAMU,Food & Beverage
+HVA,Food & Beverage
+TAFL,Food & Beverage
+SUN,Food & Beverage
+HPL,Food & Beverage
+BOPL,Food & Beverage
+CCS,Food & Beverage
+RWSL,Food & Beverage
+KVAL,Food & Beverage
+HOPL,Food & Beverage
+KGAL,Food & Beverage
+WATA,Food & Beverage
+MELS,Food & Beverage
+CTC,Food & Beverage
+LMF,Food & Beverage
+BUKI,Food & Beverage
+BFL,Food & Beverage
+KOTA,Food & Beverage
+TPL,Food & Beverage
+GRAN,Food & Beverage
+AGAL,Food & Beverage
+MFPE,Food & Beverage
+UDPL,Food & Beverage
+MAL,Food & Beverage
+ELPL,Food & Beverage
+MCPL,Food & Beverage
+CARS,Food & Beverage
+CTEA,Food & Beverage
+LION,Food & Beverage
+AGPL,Food & Beverage
+KAHA,Food & Beverage
+BALA,Food & Beverage
+MASK,Food & Beverage
+MADU,Food & Beverage
+TSML,Food & Beverage
+LDEV,Food & Beverage
+HAPU,Food & Beverage
+SOY,Food & Beverage
+HARI,Food & Beverage
+KFP,Food & Beverage
+LAMB,Food & Beverage
+COCO,Food & Beverage
+BREW,Food & Beverage
+SINH,Healthcare Equipment
+MULL,Healthcare Equipment
+LHCL,Healthcare Equipment
+NHL,Healthcare Equipment
+AMSL,Healthcare Equipment
+CHL,Healthcare Equipment
+ASIR,Healthcare Equipment
+ECL,Healthcare Equipment
+BPPL,Household Products
+SWAD,Household Products
+LGIL,Insurance
+SCAP,Insurance
+COOP,Insurance
+AAIC,Insurance
+JINS,Insurance
+ATL,Insurance
+UAL,Insurance
+HASU,Insurance
+AINS,Insurance
+INME,Insurance
+PINS,Insurance
+CINS,Insurance
+ATLL,Insurance
+APLA,Materials
+DIPD,Materials
+JAT,Materials
+LALU,Materials
+PARQ,Materials
+TKYO,Materials
+BOGA,Materials
+CIC,Materials
+ALUM,Materials
+ACME,Materials
+LLUB,Materials
+HAYC,Materials
+SIL,Materials
+AGST,Materials
+ASPH,Materials
+PACK,Materials
+REXP,Materials
+CHMX,Materials
+JFP,Materials
+GLAS,Materials
+UCAR,Materials
+ASCO,Real Estate
+PLR,Real Estate
+MHDL,Real Estate
+EAST,Real Estate
+MDL,Real Estate
+OSEA,Real Estate
+YORK,Real Estate
+CLND,Real Estate
+ETWO,Real Estate
+SHAW,Real Estate
+ONAL,Real Estate
+CABO,Real Estate
+PHAR,Real Estate
+CTLD,Real Estate
+COMD,Real Estate
+SLND,Real Estate
+CSD,Real Estate
+SING,Real Estate
+CHOU,Real Estate
+CWM,Retailing
+SINS,Retailing
+CTBL,Retailing
+KPHL,Retailing
+SMOT,Retailing
+RIL,Retailing
+DIMO,Retailing
+EMER,Retailing
+ODEL,Retailing
+UML,Retailing
+COLO,Retailing
+JKL,Retailing
+AUTO,Retailing
+HUNT,Retailing
+HBS,Software & Services
+DIAL,Telecommunication Services
+SLTL,Telecommunication Services
+PKME,Transportation
+CWL,Transportation
+MSL,Transportation
+VLL,Utilities
+LVEF,Utilities
+HPWR,Utilities
+VPEL,Utilities
+HPFL,Utilities
+PAP,Utilities
+WIND,Utilities
+LPL,Utilities
