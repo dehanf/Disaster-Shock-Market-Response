@@ -1,0 +1,21 @@
+Sector,N,Median CAR(%),W-statistic,p-value,Significant
+Food Retailing,3,458.01%,2.0,0.7500,False
+Automobiles,1,242.74%,,N/A,False
+Healthcare Equipment,8,189.45%,15.0,0.7422,False
+Consumer Durables,8,189.44%,16.0,0.8438,False
+Utilities,7,-18.04%,14.0,1.0000,False
+Household Products,2,-61.13%,0.0,1.0000,False
+Consumer Services,32,-109.55%,203.0,0.2618,False
+Banks,13,-148.57%,45.0,1.0000,False
+Retailing,14,-254.71%,40.0,0.4631,False
+Food & Beverage,43,-256.20%,326.0,0.0768,False
+Materials,21,-283.93%,77.0,0.2959,False
+Capital Goods,29,-302.61%,202.0,0.7493,False
+Telecommunication Services,2,-534.46%,0.0,0.5000,False
+Real Estate,17,-543.10%,27.0,0.0174,True
+Diversified Financials,38,-578.64%,211.0,0.0340,True
+Software & Services,1,-741.23%,,N/A,False
+Commercial Services,7,-762.37%,8.0,0.3750,False
+Insurance,12,-856.87%,7.0,0.0093,True
+Transportation,3,-1733.04%,1.0,0.5000,False
+Energy,2,-5238.12%,0.0,0.5000,False
