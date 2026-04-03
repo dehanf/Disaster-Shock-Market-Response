@@ -1,0 +1,45 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    CAR   R-squared:                       0.737
+Model:                            OLS   Adj. R-squared:                  0.714
+Method:                 Least Squares   F-statistic:                     31.76
+Date:                Fri, 03 Apr 2026   Prob (F-statistic):           3.66e-57
+Time:                        17:08:37   Log-Likelihood:                -1262.8
+No. Observations:                 260   AIC:                             2570.
+Df Residuals:                     238   BIC:                             2648.
+Df Model:                          21                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================================
+                                        coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------
+const                                 2.3270     33.974      0.068      0.945     -64.601      69.254
+beta                                  8.0581      0.331     24.340      0.000       7.406       8.710
+log_volume                           -0.0961      0.926     -0.104      0.917      -1.920       1.727
+sector_Banks                         -8.0395     33.844     -0.238      0.812     -74.711      58.632
+sector_Capital Goods                 -9.3017     33.120     -0.281      0.779     -74.548      55.945
+sector_Commercial Services          -11.5109     34.799     -0.331      0.741     -80.064      57.042
+sector_Consumer Durables            -15.0070     34.522     -0.435      0.664     -83.015      53.001
+sector_Consumer Services            -18.8615     33.049     -0.571      0.569     -83.967      46.244
+sector_Diversified Financials       -14.1329     33.017     -0.428      0.669     -79.176      50.910
+sector_Energy                      -164.0315     40.123     -4.088      0.000    -243.074     -84.989
+sector_Food & Beverage              -12.0174     32.915     -0.365      0.715     -76.860      52.825
+sector_Food Retailing                13.4982     37.657      0.358      0.720     -60.685      87.681
+sector_Healthcare Equipment           0.3556     34.533      0.010      0.992     -67.674      68.385
+sector_Household Products            -5.8055     46.030     -0.126      0.900     -96.483      84.872
+sector_Insurance                    -22.0374     33.891     -0.650      0.516     -88.801      44.727
+sector_Materials                    -14.9810     33.365     -0.449      0.654     -80.709      50.747
+sector_Real Estate                  -17.1228     33.486     -0.511      0.610     -83.090      48.844
+sector_Retailing                    -29.0349     33.679     -0.862      0.389     -95.382      37.312
+sector_Software & Services          -15.0742     46.071     -0.327      0.744    -105.833      75.685
+sector_Telecommunication Services   -15.0127     39.922     -0.376      0.707     -93.657      63.632
+sector_Transportation               -15.5955     37.569     -0.415      0.678     -89.606      58.415
+sector_Utilities                     -4.4240     34.872     -0.127      0.899     -73.122      64.274
+==============================================================================
+Omnibus:                      208.957   Durbin-Watson:                   1.921
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7173.594
+Skew:                          -2.791   Prob(JB):                         0.00
+Kurtosis:                      28.120   Cond. No.                         870.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
