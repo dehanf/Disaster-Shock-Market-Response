@@ -1,0 +1,234 @@
+\documentclass[sigconf, nonacm]{acmart}
+
+%% ── Suppress all ACM boilerplate ────────────────────────────────────────────
+\setcopyright{none}
+\settopmatter{printacmref=false}          % removes "ACM Reference Format" box
+\renewcommand\footnotetextcopyrightpermission[1]{}  % removes permission footer
+\pagestyle{plain}
+
+%% ── Packages ────────────────────────────────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{microtype}        % better text fitting in two-column layout
+
+%% ── Document metadata ───────────────────────────────────────────────────────
+\title{Market Reactions to Natural Disasters: An Event Study of\\
+       Cyclone Ditwah's Impact on the Colombo Stock Exchange}
+
+
+\begin{document}
+
+\begin{abstract}
+Natural disasters inflict severe macroeconomic shocks that ripple through financial markets, yet the dynamics of such shocks in emerging-economy exchanges remain understudied. Cyclone Ditwah made landfall in eastern Sri Lanka on 28~November~2025, causing an estimated USD~4.1~billion in direct damage --- approximately 4\% of GDP --- and triggering the Colombo Stock Exchange's (CSE) worst weekly decline since November~2022. This paper presents a preliminary event-study analysis based on a purpose-built dataset of 70,413 daily Open-High-Low-Close-Volume records for 296 CSE-listed stocks spanning February~2025 to February~2026. We describe the data collection pipeline, cleaning decisions, and the full event-study methodology including estimation of stock-level market-model parameters ($\alpha$, $\beta$) for 284 qualifying stocks. Descriptive analysis of the ASPI index confirms a sharp post-landfall decline, and distribution of market-model parameters reveals meaningful cross-sectional heterogeneity in market sensitivity across sectors. Full computation of abnormal returns, cumulative abnormal returns, and statistical tests are in progress and constitute the complete analysis to be reported in the final paper.
+\end{abstract}
+
+\keywords{event study, natural disaster, Colombo Stock Exchange, Cyclone Ditwah, abnormal returns, emerging markets, disaster economics}
+
+\maketitle
+
+%%=============================================================================
+\section{Introduction}
+%%=============================================================================
+
+Sri Lanka's economy, still recovering under an IMF Extended Fund Facility arrangement following the 2022 sovereign debt crisis \cite{imf2025}, suffered a major setback when Cyclone Ditwah struck the eastern coastline on 28~November~2025. The World Bank estimated direct physical damage at USD~4.1~billion --- approximately 4\% of GDP \cite{worldbank2025} --- affecting 58,340~hectares of paddy, damaging 247~km of roads and 35~bridges, and displacing over 209,000~people across all 25~districts \cite{who2025, ocha2025}.
+
+Financial markets responded sharply. The CSE All-Share Price Index (ASPI) fell 3.04\% on the first trading session after landfall, extending to a weekly loss of 5.35\% --- the worst since mid-November~2022 \cite{brecorder2025}. Net foreign outflows from the exchange accelerated during December~2025.
+
+Despite these observable effects, no peer-reviewed study has systematically quantified the impact of Cyclone Ditwah on individual stocks or market sectors. This gap matters for three stakeholder groups: investors who need to price disaster risk into portfolios; policymakers who must design market stabilisation interventions; and researchers who require empirical evidence on emerging-market resilience. Our project addresses this gap using a rigorous event-study framework \cite{mackinlay1997} applied to a purpose-built, high-resolution CSE dataset.
+
+This short paper reports on three research questions:
+\begin{enumerate}
+    \item \textbf{RQ1:} Was the overall CSE market abnormal return statistically significant in the period surrounding the cyclone?
+    \item \textbf{RQ2:} Which sectors suffered the largest and smallest cumulative abnormal returns?
+    \item \textbf{RQ3:} Did volatility and liquidity change significantly after landfall?
+\end{enumerate}
+
+We present the dataset, cleaning pipeline, and market-model estimation as confirmed preliminary results; full abnormal-return computation and statistical testing are reported as work in progress.
+
+%%=============================================================================
+\section{Dataset and Data Preparation}
+%%=============================================================================
+
+\subsection{Primary Dataset}
+
+Daily OHLCV data for all CSE-listed stocks were collected via a custom Python web-scraping pipeline querying the exchange's public data interface. The raw dataset comprised 71,044 rows. After cleaning (detailed in Section~2.2), the working dataset contains 70,413 rows. Table~\ref{tab:dataset} summarises the key characteristics.
+
+\begin{table}[h]
+  \centering
+  \caption{Primary dataset characteristics}
+  \label{tab:dataset}
+  \small
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    \textbf{Attribute} & \textbf{Value} \\
+    \midrule
+    Stocks covered & 296 CSE-listed equities \\
+    Date range  & 23~Feb~2025 -- 27~Feb~2026 \\
+    Raw records & 71,044 rows \\
+    Clean records & 70,413 rows \\
+    Fields      & Symbol, date, open, high, low, close, volume \\
+    Collection method & Python web scraping (public data) \\
+    Benchmark index & CSE All-Share Price Index (ASPI) \\
+    Sectors     & 14 CSE industry groups \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+ASPI daily OHLC data were collected separately and merged on date to provide the market benchmark return $R_{mt}$ required by the market model. Sector classifications were derived from CSE sector listings, mapping each stock to one of 14 industry groups. Macroeconomic control variables from the Central Bank of Sri Lanka and IMF country report \cite{imf2025} will be incorporated in the final analysis.
+
+\subsection{Data Cleaning}
+
+\textbf{Suffix handling.} CSE tickers carry suffixes encoding share class. Records with suffixes U0000 (units, $n=407$) and P0000 (preference shares, $n=224$) were removed, yielding 70,413 rows across voting (N0000, 65,606 rows) and non-voting (X0000, 4,807 rows) shares.
+
+\textbf{Sector mapping.} A manually verified sector mapping was applied to all 296 symbols. Four symbols --- BBH, CALC, CALI, and CSF --- did not appear in the mapping file and were assigned to an ``Others'' category pending verification.
+
+\textbf{Regression qualification.} The market model was estimated only for stocks with at least 30 clean trading observations in the estimation window (Day~$-120$ to Day~$-6$). This excluded 12 thinly traded stocks, leaving 284 stocks with valid ($\hat{\alpha}$, $\hat{\beta}$) pairs used in all downstream analysis.
+
+%%=============================================================================
+\section{Methodology}
+%%=============================================================================
+
+We adopt the standard event-study framework of MacKinlay \cite{mackinlay1997}.
+
+\subsection{Event Definition and Windows}
+The event date ($t = 0$) is 28~November~2025 (cyclone landfall). Two non-overlapping windows are defined:
+\begin{itemize}
+    \item \textbf{Estimation window:} Day~$-120$ to Day~$-6$ ($\sim$115 trading days). Used to learn each stock's normal return behaviour. The gap between Day~$-6$ and Day~$-5$ isolates the estimation period from potential anticipation effects.
+    \item \textbf{Event window:} Day~$-5$ to Day~$+30$ (36 trading days). Spans pre-landfall anticipation, the landfall shock, and post-disaster recovery.
+\end{itemize}
+
+\subsection{Market Model}
+Individual stock returns are modelled as a linear function of market returns over the estimation window:
+\begin{equation}
+  R_{it} = \alpha_i + \beta_i R_{mt} + \varepsilon_{it}
+  \label{eq:market-model}
+\end{equation}
+where $R_{it}$ is the daily return of stock $i$ on day $t$, $R_{mt}$ is the ASPI return, $\alpha_i$ is the stock-specific intercept, $\beta_i$ is the market-sensitivity coefficient, and $\varepsilon_{it}$ is a zero-mean error term.
+
+\subsection{Abnormal Returns and Cumulative Abnormal Returns}
+Abnormal returns in the event window are the residual between the actual return and the counterfactual predicted by the fitted model:
+\begin{equation}
+  AR_{it} = R_{it} - \bigl(\hat{\alpha}_i + \hat{\beta}_i R_{mt}\bigr)
+  \label{eq:ar}
+\end{equation}
+Cumulative abnormal returns aggregate over any sub-window $[t_1, t_2]$:
+\begin{equation}
+  CAR_i(t_1, t_2) = \sum_{t=t_1}^{t_2} AR_{it}
+  \label{eq:car}
+\end{equation}
+We report CARs for five windows: pre-event $[-5,-1]$, landfall day $[0,0]$, immediate aftermath $[0,+5]$, full post-event $[0,+30]$, and the complete event window $[-5,+30]$.
+
+\subsection{Statistical Testing}
+\textbf{Cross-sectional $t$-test.} For a group of $N$ stocks, the test statistic is $t = \overline{CAR} / (s / \sqrt{N})$. Applied at the full-market level and per sector. A $p$-value below 0.05 is taken as evidence of a statistically significant cyclone effect.
+
+\textbf{Wilcoxon signed-rank test.} A non-parametric complement robust to heavy tails typical of disaster-period returns.
+
+\subsection{Volatility and Liquidity Analysis}
+The High-Low spread serves as a model-free intraday volatility proxy. Daily traded volume proxies liquidity. Paired $t$-tests compare stock-level means in the estimation window against the post-event window $[0,+30]$.
+
+%%=============================================================================
+\section{Preliminary Results and Technical Validation}
+%%=============================================================================
+
+\subsection{ASPI Index Trajectory}
+Figure~\ref{fig:aspi} plots the daily close from February~2025 to February~2026. The index rose steadily from approximately 16,900 in February~2025 to a peak of around 23,600 in mid-November~2025. Following Cyclone Ditwah's landfall, the index declined sharply, falling from 22,844 (26~November) to a local trough of approximately 21,431 on 5~December~2025 --- a peak-to-trough drop of approximately 6.2\% over six trading days. This represents the most severe short-term decline in the observation window and provides strong \textit{prima facie} evidence of a disaster shock.
+
+\begin{figure}[h]
+  \centering
+  % \includegraphics[width=\linewidth]{fig1_aspi.png}
+  \vspace{3cm} % Placeholder for image
+  \caption{ASPI daily close, Feb 2025 -- Feb 2026. Dashed vertical line marks landfall (28 Nov 2025).}
+  \label{fig:aspi}
+\end{figure}
+
+\subsection{Market Model Parameter Estimates}
+Table~\ref{tab:params} summarises the distribution of $\hat{\alpha}$ and $\hat{\beta}$ estimated from the estimation window. The mean $\hat{\beta}$ of 0.72 indicates that the average CSE stock moves less than the market, consistent with relatively low liquidity and a high proportion of defensive stocks.
+
+\begin{table}[h]
+  \centering
+  \caption{Market model parameter estimates (N = 284 stocks)}
+  \label{tab:params}
+  \small
+  \begin{tabular}{@{}lrrrr@{}}
+    \toprule
+    \textbf{Parameter} & \textbf{Mean} & \textbf{Std Dev} & \textbf{Min} & \textbf{Max} \\
+    \midrule
+    $\hat{\alpha}$ (alpha) & $0.0009$ & $0.0031$ & $-0.0089$ & $0.0214$ \\
+    $\hat{\beta}$ (beta)   & $0.72$   & $0.48$   & $-0.31$   & $2.84$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\textbf{Sector-level heterogeneity.} The $\hat{\beta}$ values vary substantially. Diversified Financials and Capital Goods stocks exhibit higher mean betas ($\hat{\beta} > 1.0$), while Consumer Services and Food \& Beverage stocks have lower mean betas ($\hat{\beta} < 0.5$).
+
+\subsection{Dataset Validation}
+The pipeline produces 70,413 clean rows with zero null values in key fields after merging. The ASPI merge joins on 226 unique trading dates with no unmatched rows, confirming data integrity. The estimation window yields approximately 32,660 valid observation-day pairs.
+
+\subsection{Pipeline Status and Work in Progress}
+Table~\ref{tab:status} lists the analysis steps with their current completion status. Based on the raw ASPI data, we anticipate statistically significant negative mean CARs across the full market and larger negative CARs for Agriculture and Tourism sectors.
+
+\begin{table}[h]
+  \centering
+  \caption{Analysis pipeline status}
+  \label{tab:status}
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Step} & \textbf{Output} & \textbf{Status} \\
+    \midrule
+    01--03 & Data cleaning, suffix filter, ASPI merge & \checkmark Complete \\
+    04    & Market model ($\hat{\alpha}$, $\hat{\beta}$) for 284 stocks & \checkmark Complete \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+%%=============================================================================
+\section{Discussion and Future Work}
+%%=============================================================================
+
+This preliminary analysis establishes a validated, high-resolution dataset and a fully specified event-study pipeline for quantifying Cyclone Ditwah's impact on the CSE. The ASPI trajectory provides clear visual evidence of a disaster shock, and market-model parameters are estimated for 284 stocks, laying the foundation for abnormal-return computation.
+
+The full paper will deliver: (i) sector-level CAR tables with significance stars from both the cross-sectional $t$-test and Wilcoxon signed-rank test; (ii) a cumulative AR time-series chart across the event window by sector; and (iii) characterisations of how market microstructure conditions changed post-landfall. All code and data will be released in a public GitHub repository to support reproducibility and future research on South Asian frontier markets.
+
+%%=============================================================================
+%% References
+%%=============================================================================
+
+\begin{thebibliography}{9}
+
+\bibitem{worldbank2025}
+World Bank.
+\newblock Damage from Cyclone Ditwah in Sri Lanka Estimated at \$4.1 Billion.
+\newblock \textit{World Bank Press Release}, December~22, 2025.
+
+\bibitem{who2025}
+World Health Organization.
+\newblock Sri Lanka Floods and Landslides -- Cyclonic Storm Ditwah
+  November~2025.
+\newblock \textit{WHO South-East Asia Region}, December~2, 2025.
+
+\bibitem{ocha2025}
+OCHA.
+\newblock Sri Lanka: Cyclone Ditwah -- Situation Report~3.
+\newblock \textit{UN Office for the Coordination of Humanitarian Affairs},
+  December~23, 2025.
+
+\bibitem{brecorder2025}
+Business Recorder.
+\newblock Cyclone-ravaged Sri Lanka's shares log worst week in over three
+  years.
+\newblock 2025.
+
+\bibitem{imf2025}
+International Monetary Fund.
+\newblock IMF Country Report No.\ 25/339: Sri Lanka.
+\newblock 2025.
+
+\bibitem{mackinlay1997}
+A.~C. MacKinlay.
+\newblock Event studies in economics and finance.
+\newblock \textit{Journal of Economic Literature}, 35(1):13--39, 1997.
+
+\end{thebibliography}
+
+\end{document}
