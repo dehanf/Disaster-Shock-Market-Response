@@ -343,18 +343,17 @@ stocks, motivating the sector-level disaggregation below.
 
 \begin{table}[h]
   \centering
-  \caption{Market-level mean CAR ($n=237$ stocks except Day~0 where
-           $n=233$ due to non-trading days)}
+  \caption{Market-level mean CAR ($N=180$ stocks)}
   \label{tab:market_car}
   \small
   \begin{tabular}{@{}lrr@{}}
     \toprule
     \textbf{Window} & \textbf{Mean CAR (\%)} & \textbf{Std Dev (\%)} \\
     \midrule
-    Pre-event $[-5,-1]$      & $-0.78$ & $4.56$  \\
-    Landfall day $[0,0]$     & $-0.03$ & $2.65$  \\
-    Aftermath $[0,+5]$       & $-1.71$ & $5.95$  \\
-    Full window $[-5,+30]$   & $-4.42$ & $11.39$ \\
+    Pre-event $[-5,-1]$      & $-0.91$ & $3.52$  \\
+    Landfall day $[0,0]$     & $-0.08$ & $2.43$  \\
+    Aftermath $[0,+5]$       & $-1.96$ & $5.88$  \\
+    Full window $[-5,+30]$   & $-4.50$ & $10.71$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -385,25 +384,24 @@ estimates for all 20~CSE industry groups.
     \textbf{Sector} & \textbf{CAR($-5,-1$)} & \textbf{CAR($0,0$)} &
     \textbf{CAR($0,+5$)} & \textbf{CAR($-5,+30$)} \\
     \midrule
-    Transportation         & $-4.53$ & $-1.21$ & $-4.45$ & $-10.03$ \\
-    Real Estate            & $-2.36$ & $-0.18$ & $-2.57$ & $-9.23$  \\
+    Transportation         & $-5.90$ & $-1.23$ & $-5.37$ & $-18.65$ \\
+    Real Estate            & $-2.88$ & $ 0.07$ & $-2.08$ & $-10.93$ \\
+    Commercial Services    & $-3.21$ & $-0.56$ & $ 2.51$ & $-7.71$  \\
     Software \& Services   & $-1.26$ & $ 0.06$ & $-2.26$ & $-7.41$  \\
     Utilities              & $ 0.77$ & $-0.86$ & $-1.64$ & $-6.69$  \\
-    Diversified Financials & $-0.96$ & $-0.34$ & $-2.44$ & $-6.69$  \\
-    Insurance              & $-0.97$ & $-0.70$ & $-4.71$ & $-6.36$  \\
-    Banks                  & $-1.91$ & $ 0.09$ & $-1.17$ & $-6.07$  \\
+    Consumer Services      & $ 1.51$ & $-0.82$ & $-6.50$ & $-6.59$  \\
+    Insurance              & $-0.26$ & $-0.06$ & $-5.68$ & $-5.86$  \\
     Telecom Services       & $-3.53$ & $ 0.36$ & $-1.98$ & $-5.34$  \\
-    Food \& Beverage       & $-0.87$ & $ 0.19$ & $-1.76$ & $-4.18$  \\
-    Consumer Services      & $ 0.90$ & $-0.33$ & $-3.83$ & $-3.97$  \\
-    Capital Goods          & $-1.70$ & $ 0.12$ & $-0.22$ & $-2.97$  \\
-    Retailing              & $-0.92$ & $ 2.25$ & $-2.13$ & $-2.50$  \\
-    Consumer Durables      & $ 0.24$ & $-0.25$ & $ 0.65$ & $-2.28$  \\
+    Banks                  & $-1.65$ & $ 0.03$ & $-0.76$ & $-4.98$  \\
+    Diversified Financials & $-0.89$ & $-0.50$ & $-1.88$ & $-4.77$  \\
+    Retailing              & $-1.61$ & $ 3.65$ & $-1.32$ & $-4.25$  \\
+    Food \& Beverage       & $-0.44$ & $-0.36$ & $-3.45$ & $-3.90$  \\
+    Healthcare Equipment   & $-2.02$ & $ 0.20$ & $ 0.90$ & $-3.57$  \\
+    Capital Goods          & $-1.66$ & $ 0.13$ & $-0.31$ & $-3.07$  \\
     Energy                 & $-0.70$ & $ 0.05$ & $-0.69$ & $-2.09$  \\
-    Materials              & $-1.55$ & $-0.43$ & $ 0.43$ & $-1.75$  \\
     Household Products     & $-0.79$ & $-0.08$ & $-1.66$ & $-1.22$  \\
-    Healthcare Equipment   & $-0.89$ & $ 0.58$ & $ 1.89$ & $-0.66$  \\
-    Food Retailing         & $-0.02$ & $-0.34$ & $ 1.54$ & $-0.04$  \\
-    Commercial Services    & $ 4.66$ & $-0.73$ & $ 1.87$ & $ 0.27$  \\
+    Consumer Durables      & $ 0.56$ & $-0.29$ & $ 0.23$ & $-1.04$  \\
+    Materials              & $-0.89$ & $ 0.00$ & $ 2.26$ & $ 2.60$  \\
     Automobiles            & $ 1.42$ & $ 0.16$ & $-0.66$ & $ 2.43$  \\
     \bottomrule
   \end{tabular}}
@@ -442,7 +440,6 @@ the Wilcoxon signed-rank test for the full event window CAR$(-5,+30)$
 across all 20~sectors. Figure~\ref{fig:car_boxplot} shows the within-sector
 CAR distributions that underpin the significance results.
 
-%% FIX: boxplot figure inserted here, where it is first referenced
 \begin{figure}[h]
   \centering
   \includegraphics[width=\linewidth]{figures/sector_car_boxplot.pdf}
@@ -463,13 +460,7 @@ CAR distributions that underpin the significance results.
 
 \begin{table*}[!htb]
   \centering
-  \caption{Sector-level statistical significance: cross-sectional $t$-test
-           and Wilcoxon signed-rank test, full event window CAR$(-5,+30)$.
-           Sectors ordered by mean CAR. $^{\dagger}$Sectors with $N < 5$
-           (Energy $N=2$; Software \& Services $N=1$; Automobiles $N=1$;
-           Telecommunication Services $N=2$; Food Retailing $N=3$) are
-           included for completeness but should be interpreted with caution;
-           test statistics are not computed for $N=1$.}
+  \caption{Sector-level statistical significance: full event window CAR$(-5,+30)$}
   \label{tab:significance}
   \footnotesize
   \begin{tabular}{@{}lrrrrrrr@{}}
@@ -482,29 +473,12 @@ CAR distributions that underpin the significance results.
     & & \textbf{Mean (\%)} & \textbf{$t$} & \textbf{$p$} &
         \textbf{Median (\%)} & \textbf{$W$} & \textbf{$p$} \\
     \midrule
-    Transportation$^{\dagger}$       & 3  & $-10.03$ & $-1.16$ & $0.366$ & $-17.33$ & $1$  & $0.500$ \\
-    Real Estate                      & 17 & $ -9.23$ & $-2.55$ & $\mathbf{0.021}$ & $-5.43$ & $27$ & $\mathbf{0.017}$ \\
-    Software \& Services$^{\dagger}$ & 1  & $ -7.41$ & ---     & ---     & $-7.41$ & ---  & ---     \\
-    Utilities                        & 7  & $ -6.69$ & $-1.29$ & $0.244$ & $-0.18$ & $14$ & $1.000$ \\
-    Diversified Financials           & 38 & $ -6.69$ & $-0.82$ & $0.420$ & $-5.79$ & $211$ & $\mathbf{0.034}$ \\
-    Insurance                        & 12 & $ -6.36$ & $-1.20$ & $0.257$ & $-8.57$ & $7$  & $\mathbf{0.009}$ \\
-    Banks                            & 13 & $ -6.07$ & $-1.25$ & $0.236$ & $-1.49$ & $45$ & $1.000$ \\
-    Telecom Services$^{\dagger}$     & 2  & $ -5.34$ & $-1.71$ & $0.337$ & $-5.34$ & $0$  & $0.500$ \\
-    Food \& Beverage                 & 43 & $ -4.18$ & $-0.50$ & $0.619$ & $-2.56$ & $326$ & $0.077$ \\
-    Consumer Services                & 32 & $ -3.97$ & $-0.14$ & $0.887$ & $-1.10$ & $203$ & $0.262$ \\
-    Capital Goods                    & 29 & $ -2.97$ & $-0.27$ & $0.787$ & $-3.03$ & $202$ & $0.749$ \\
-    Retailing                        & 14 & $ -2.50$ & $-1.12$ & $0.282$ & $-2.55$ & $40$ & $0.463$ \\
-    Consumer Durables                & 8  & $ -2.28$ & $-0.62$ & $0.555$ & $ 1.89$ & $16$ & $0.844$ \\
-    Energy$^{\dagger}$               & 2  & $ -2.09$ & $-1.04$ & $0.487$ & $-52.38$ & $0$ & $0.500$ \\
-    Materials                        & 21 & $ -1.75$ & $-0.72$ & $0.483$ & $-2.84$ & $77$ & $0.296$ \\
-    Household Products               & 2  & $ -1.22$ & $-1.00$ & $0.500$ & $-0.61$ & $0$  & $1.000$ \\
-    Healthcare Equipment             & 8  & $ -0.66$ & $-0.11$ & $0.914$ & $ 1.89$ & $15$ & $0.742$ \\
-    Food Retailing$^{\dagger}$       & 3  & $ -0.04$ & $-1.00$ & $0.423$ & $ 4.58$ & $2$  & $0.750$ \\
-    Commercial Services              & 7  & $ +0.27$ & $-0.44$ & $0.675$ & $-7.62$ & $8$  & $0.375$ \\
-    Automobiles$^{\dagger}$          & 1  & $ +2.43$ & ---     & ---     & $ 2.43$ & ---  & ---     \\
-    \midrule
-    \textbf{All Stocks (Market)} & \textbf{237} & $\mathbf{-4.42}$ &
-    $\mathbf{-6.14}$ & $\mathbf{<0.001}$ & --- & --- & --- \\
+    Transportation & 2 & $-18.65$ & $-14.11$ & $0.045$ & $-18.65$ & $0.0$ & $0.500$ \\
+    Real Estate & 11 & $-10.93$ & $-2.08$ & $0.064$ & $-11.63$ & $11.0$ & $0.054$ \\
+    Consumer Services & 18 & $-6.59$ & $-2.73$ & $0.014$ & $-3.93$ & $38.0$ & $0.039$ \\
+    Food \& Beverage & 29 & $-3.90$ & $-2.51$ & $0.018$ & $-4.50$ & $110.0$ & $0.019$ \\
+    Diversified Financials & 28 & $-4.77$ & $-2.11$ & $0.044$ & $-5.15$ & $114.0$ & $0.043$ \\
+    Commercial Services & 3 & $-7.71$ & $-22.46$ & $0.002$ & $-7.62$ & $0.0$ & $0.250$ \\
     \bottomrule
   \end{tabular}
 \end{table*}
@@ -551,10 +525,7 @@ dynamics that the aggregate statistics partially conceal.
 
 \begin{table}[h]
   \centering
-  \caption{Pre- vs.\ post-event volatility and liquidity
-           (Welch's independent-samples $t$-test;
-           pre: Day~$-30$ to Day~$-6$;
-           post: Day~0 to Day~$+24$; $n=25$ daily observations per window)}
+  \caption{Pre- vs. post-event volatility and liquidity comparison}
   \label{tab:vol_liq}
   \small
   \begin{tabular}{@{}lrrrr@{}}
@@ -562,8 +533,8 @@ dynamics that the aggregate statistics partially conceal.
     \textbf{Metric} & \textbf{Pre-event} & \textbf{Post-event} &
     \textbf{$t$} & \textbf{$p$} \\
     \midrule
-    Mean H-L spread (LKR)      & 10.77   & 8.87    & $1.84$ & $0.076$   \\
-    Mean daily vol.\ (shares)  & 565{,}798 & 366{,}999 & $3.76$ & $<0.001$ \\
+    Volatility (Mean Spread)  & $2.19$ & $2.80$ & $-2.50$ & $0.022$ \\
+    Liquidity (Total Volume)  & $685{,}987$ & $399{,}173$ & $4.68$ & $<0.001$ \\
     \bottomrule
   \end{tabular}
 \end{table}
