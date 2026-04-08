@@ -1,21 +1,21 @@
 Sector,N,Median CAR(%),W-statistic,p-value,Significant
-Food Retailing,3,458.01%,2.0,0.7500,False
 Automobiles,1,242.74%,,N/A,False
-Healthcare Equipment,8,189.45%,15.0,0.7422,False
 Consumer Durables,8,189.44%,16.0,0.8438,False
+Healthcare Equipment,7,167.18%,14.0,1.0000,False
+Retailing,13,2.85%,38.0,0.6355,False
 Utilities,7,-18.04%,14.0,1.0000,False
+Banks,13,-30.79%,40.0,0.7354,False
+Materials,18,-53.55%,69.0,0.7226,False
 Household Products,2,-61.13%,0.0,1.0000,False
-Consumer Services,32,-109.55%,203.0,0.2618,False
-Banks,13,-148.57%,45.0,1.0000,False
-Retailing,14,-254.71%,40.0,0.4631,False
-Food & Beverage,43,-256.20%,326.0,0.0768,False
-Materials,21,-283.93%,77.0,0.2959,False
-Capital Goods,29,-302.61%,202.0,0.7493,False
+Consumer Services,31,-153.76%,182.0,0.2023,False
+Capital Goods,28,-303.32%,178.0,0.5824,False
+Food & Beverage,37,-418.71%,252.0,0.1366,False
+Food Retailing,1,-466.14%,,N/A,False
+Real Estate,16,-515.54%,27.0,0.0335,True
 Telecommunication Services,2,-534.46%,0.0,0.5000,False
-Real Estate,17,-543.10%,27.0,0.0174,True
-Diversified Financials,38,-578.64%,211.0,0.0340,True
+Diversified Financials,35,-618.53%,159.0,0.0179,True
+Insurance,11,-698.03%,7.0,0.0186,True
+Commercial Services,4,-739.01%,1.0,0.2500,False
 Software & Services,1,-741.23%,,N/A,False
-Commercial Services,7,-762.37%,8.0,0.3750,False
-Insurance,12,-856.87%,7.0,0.0093,True
-Transportation,3,-1733.04%,1.0,0.5000,False
+Transportation,2,-1865.22%,0.0,0.5000,False
 Energy,2,-5238.12%,0.0,0.5000,False
