@@ -1,0 +1,21 @@
+Sector,"CAR(-5,-1)","CAR(0,0)","CAR(0,+5)","CAR(-5,+30)"
+Automobiles,1.42,0.16,-0.66,2.43
+Banks,-1.65,0.03,-0.76,-4.98
+Capital Goods,-1.7,0.12,-0.22,-2.97
+Commercial Services,-2.73,0.65,2.12,-4.67
+Consumer Durables,0.24,-0.25,0.65,-2.28
+Consumer Services,0.92,-0.22,-3.87,-4.26
+Diversified Financials,-1.16,-0.27,-2.38,-6.22
+Energy,-0.7,0.05,-0.69,-2.09
+Food & Beverage,-0.62,0.15,-2.45,-3.67
+Food Retailing,-1.5,-0.42,3.22,-4.66
+Healthcare Equipment,-1.98,0.77,0.7,-2.43
+Household Products,-0.79,-0.08,-1.66,-1.22
+Insurance,-0.97,-0.7,-4.71,-6.36
+Materials,-1.36,-0.53,1.82,0.67
+Real Estate,-2.36,-0.18,-2.57,-9.23
+Retailing,-1.25,2.75,-2.56,-3.37
+Software & Services,-1.26,0.06,-2.26,-7.41
+Telecommunication Services,-3.53,0.36,-1.98,-5.34
+Transportation,-5.9,-1.23,-5.37,-18.65
+Utilities,0.77,-0.86,-1.64,-6.69
