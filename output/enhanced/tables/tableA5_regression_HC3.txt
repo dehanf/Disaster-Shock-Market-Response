@@ -1,0 +1,33 @@
+OLS Regression Results (HC3 Robust Standard Errors)
+======================================================================
+Dep. Variable:           CAR (%)
+No. Observations:        237
+R-squared:               0.1083
+Adj. R-squared:          0.0212
+Covariance Type:         HC3
+======================================================================
+Variable                                  Coef    Std Err        t    P>|t|     [0.025     0.975]
+---------------------------------------------------------------------------------------------
+const                                  -0.8485        inf   -0.000   1.0000       -inf        inf
+beta                                    3.9378        inf    0.000   1.0000       -inf        inf
+log_volume                              0.2583        inf    0.000   1.0000       -inf        inf
+sector_Banks                          -12.9031        inf   -0.000   1.0000       -inf        inf
+sector_Capital Goods                   -7.6366        inf   -0.000   1.0000       -inf        inf
+sector_Commercial Services             -6.1168        inf   -0.000   1.0000       -inf        inf
+sector_Consumer Durables              -10.0343        inf   -0.000   1.0000       -inf        inf
+sector_Consumer Services               -9.9443        inf   -0.000   1.0000       -inf        inf
+sector_Diversified Financials         -13.8249        inf   -0.000   1.0000       -inf        inf
+sector_Energy                          -4.8225        inf   -0.000   1.0000       -inf        inf
+sector_Food & Beverage                 -9.4011        inf   -0.000   1.0000       -inf        inf
+sector_Food Retailing                  -5.5723        inf   -0.000   1.0000       -inf        inf
+sector_Healthcare Equipment            -7.9559        inf   -0.000   1.0000       -inf        inf
+sector_Household Products              -5.1294        inf   -0.000   1.0000       -inf        inf
+sector_Insurance                      -13.0021        inf   -0.000   1.0000       -inf        inf
+sector_Materials                       -7.5179        inf   -0.000   1.0000       -inf        inf
+sector_Real Estate                    -14.6300        inf   -0.000   1.0000       -inf        inf
+sector_Retailing                       -7.5005        inf   -0.000   1.0000       -inf        inf
+sector_Software & Services            -13.1692        inf   -0.000   1.0000       -inf        inf
+sector_Telecommunication Services     -12.1145        inf   -0.000   1.0000       -inf        inf
+sector_Transportation                 -13.9523        inf   -0.000   1.0000       -inf        inf
+sector_Utilities                      -12.9721        inf   -0.000   1.0000       -inf        inf
+======================================================================

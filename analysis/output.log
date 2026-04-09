@@ -1,0 +1,185 @@
+﻿======================================================================
+PHASE 0: Data Loading & Validation
+======================================================================
+  Total symbols in cleaned dataset: 263
+  Estimating market model parameters...
+  Stocks with >= 60 estimation observations: 257
+  Beta filter: 257 -> 237 stocks (removed 20)
+  QUALIFYING STOCKS FOR ANALYSIS: 237
+  Data validation report saved.
+
+======================================================================
+PHASE 1: Corrected Market & Sector CARs
+======================================================================
+  Table 3 (Market CARs) saved.
+     Window   N  Mean_CAR_pct  Std_pct  t_stat  p_value  BMP_t  BMP_p
+ CAR(-5,-1) 237         -0.78     4.56   -2.64   0.0087  -2.84 0.0049
+   CAR(0,0) 233         -0.03     2.65   -0.20   0.8448   0.49 0.6219
+  CAR(0,+5) 237         -1.71     5.95   -4.42   0.0000  -3.56 0.0005
+CAR(-5,+30) 237         -4.42    11.39   -5.97   0.0000  -4.22 0.0000
+
+  Table 4 (Sector CARs) saved.
+
+  Computing sector-level significance tests...
+  Table 5 (Sector Significance) saved.
+
+======================================================================
+PHASE 2: Multiple Testing Corrections
+======================================================================
+  Table A1 (Multiple Testing Corrections) saved.
+                Sector  Raw_p  Bonferroni_p  Holm_p   BH_q
+                 Banks 0.0001        0.0014  0.0014 0.0001
+         Capital Goods 0.0001        0.0014  0.0014 0.0001
+   Commercial Services 0.0001        0.0014  0.0014 0.0001
+     Consumer Durables 0.0001        0.0014  0.0014 0.0001
+     Consumer Services 0.0001        0.0014  0.0014 0.0001
+Diversified Financials 0.0001        0.0014  0.0014 0.0001
+       Food & Beverage 0.0001        0.0014  0.0014 0.0001
+  Healthcare Equipment 0.0001        0.0014  0.0014 0.0001
+             Insurance 0.0001        0.0014  0.0014 0.0001
+             Materials 0.0001        0.0014  0.0014 0.0001
+           Real Estate 0.0001        0.0014  0.0014 0.0001
+             Retailing 0.0001        0.0014  0.0014 0.0001
+        Transportation 0.0001        0.0014  0.0014 0.0001
+             Utilities 0.0001        0.0014  0.0014 0.0001
+
+======================================================================
+PHASE 3: Sub-Window Analysis
+======================================================================
+  Table A3 (Sub-Window CARs) saved.
+Window                      Pre [-5,-1]  Day 0 [0,0]  [+1,+5]  [+6,+10]  [+11,+20]  [+21,+30]
+Sector                                                                                       
+Automobiles                        1.42         0.16    -0.82      0.55       1.67      -0.55
+Banks                             -1.91         0.09    -1.26     -1.12      -2.20       0.32
+Capital Goods                     -1.70         0.12    -0.34      0.78       0.25      -2.25
+Commercial Services                4.66        -0.73     2.48     -2.00      -2.01      -2.25
+Consumer Durables                  0.24        -0.25     0.90      0.22      -1.53      -1.85
+Consumer Services                  0.90        -0.33    -3.50      0.91      -2.31       0.36
+Diversified Financials            -0.96        -0.34    -2.10     -1.35      -0.31      -1.63
+Energy                            -0.70         0.05    -0.75     -1.69       0.53       0.46
+Food & Beverage                   -0.87         0.19    -1.95     -0.88      -0.02      -0.65
+Food Retailing                    -0.02        -0.34     1.88      0.77      -4.51       2.18
+Healthcare Equipment              -0.89         0.58     1.32     -0.40      -0.53      -0.74
+Household Products                -0.79        -0.08    -1.58     -0.51       1.72       0.02
+Insurance                         -0.97        -0.70    -4.01     -0.79      -0.15       0.25
+Materials                         -1.55        -0.43     0.83      0.76      -0.35      -1.10
+Real Estate                       -2.36        -0.18    -2.40     -2.93      -0.47      -0.96
+Retailing                         -0.92         2.25    -4.38      0.54       1.75      -1.74
+Software & Services               -1.26         0.06    -2.32     -0.38      -2.77      -0.73
+Telecommunication Services        -3.53         0.36    -2.34      0.68       0.98      -1.49
+Transportation                    -4.53        -1.21    -3.24     -0.21       7.54      -8.38
+Utilities                          0.77        -0.86    -0.78     -1.49      -1.12      -3.22
+
+======================================================================
+PHASE 4: Robustness � Alternative Estimation Windows
+======================================================================
+  Estimating with Default [-120,-6]...
+  Beta filter: 257 -> 237 stocks (removed 20)
+  Estimating with Short [-90,-6]...
+  Beta filter: 20 -> 1 stocks (removed 19)
+  Estimating with Long [-180,-6]...
+  Beta filter: 260 -> 241 stocks (removed 19)
+  Table A4 saved.
+Estimation_Window  N_stocks  Mean_CAR_pct  t_stat  p_value
+Default [-120,-6]       237         -4.42   -5.97      0.0
+   Short [-90,-6]         1         17.59     NaN      NaN
+   Long [-180,-6]       241         -4.96   -5.13      0.0
+
+======================================================================
+PHASE 5: Robustness � Market-Adjusted Returns
+======================================================================
+  Market-Adjusted Return: N=237, Mean CAR=-0.94%, t=-1.69, p=0.0923
+  Table A4b (Market-Adjusted Returns) saved.
+
+======================================================================
+PHASE 6: Enhanced Placebo Tests (Multiple Pseudo-Events)
+======================================================================
+  Running placebo at Day -30...
+  Running placebo at Day -60...
+  Running placebo at Day -90...
+  Table A2 (Multi-Placebo) saved.
+ Shift_Days   N  Placebo_CAR_pct t_stat p_value  Significant
+         30 237            -3.48  -3.85  0.0002         True
+         60 237            -0.54  -0.65  0.5193        False
+         90 237             3.33   3.65  0.0003         True
+
+======================================================================
+PHASE 7: Cross-Sectional Regression (HC3 Robust SE)
+======================================================================
+  Table A5 (Robust Regression) saved.
+  R-squared: 0.108, Adj R-squared: 0.021
+  Beta coef: 3.9378, p=0.0019
+
+======================================================================
+PHASE 8: Quantile Regression (25th, 50th, 75th)
+======================================================================
+  Table A5b (Quantile Regression via LP) saved.
+ Quantile   Variable     Coef  Std_Err  t_stat  p_value
+     0.25      const -16.6849   6.8407   -2.44   0.0155
+     0.25       beta   2.8928   1.9814    1.46   0.1456
+     0.25 log_volume   0.2385   0.5241    0.45   0.6496
+     0.50      const  -2.5237   4.9912   -0.51   0.6136
+     0.50       beta   2.4164   0.9471    2.55   0.0114
+     0.50 log_volume  -0.2476   0.3828   -0.65   0.5184
+     0.75      const   1.3355   2.9473    0.45   0.6509
+     0.75       beta   2.9078   1.1822    2.46   0.0146
+     0.75 log_volume  -0.1010   0.2737   -0.37   0.7124
+
+======================================================================
+PHASE 9: Size-Effect Analysis
+======================================================================
+  Table A6 (Size Effect) saved.
+        Size_Group   N  Mean_CAR_pct  t_stat  p_value
+             Large 119         -4.94   -4.71   0.0000
+             Small 118         -3.89   -3.72   0.0003
+Difference (Welch)             -1.05   -0.71   0.4777
+
+======================================================================
+PHASE 10: GARCH(1,1) Standardised Abnormal Returns
+======================================================================
+  GARCH fitted: 237 stocks, failed: 0
+  Table A7 (GARCH Comparison) saved.
+
+======================================================================
+PHASE 11: Enhanced Figures
+======================================================================
+  Generating Fig A1: AAR with CI...
+  Generating Fig A2: CAR distribution...
+  Generating Fig A3: CAAR with placebo overlay...
+  Generating Fig A4: Sub-window heatmap...
+  Generating Fig A5: Size effect...
+  Generating Fig A6: Volatility & Liquidity...
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+
+  Qualifying stocks analysed: 237
+  Tables saved to: D:\Semester 4\Data Science\Research\Github\Disaster-Shock-Market-Response\output\enhanced\tables
+  Figures saved to: D:\Semester 4\Data Science\Research\Github\Disaster-Shock-Market-Response\output\enhanced\figs
+
+  Generated Tables:
+    - 00_data_validation.csv
+    - table3_market_CARs.csv
+    - table4_sector_CARs.csv
+    - table5_sector_significance.csv
+    - tableA1_multiple_testing.csv
+    - tableA2_placebo_multi.csv
+    - tableA3_subwindow_CARs.csv
+    - tableA4_alt_estimation_windows.csv
+    - tableA4b_market_adjusted_returns.csv
+    - tableA5_regression_HC3.txt
+    - tableA5_regression_robust.txt
+    - tableA5b_quantile_regression.csv
+    - tableA6_size_effect.csv
+    - tableA7_garch_comparison.csv
+
+  Generated Figures:
+    - figA1_aar_bars.png
+    - figA2_car_distribution.png
+    - figA3_caar_vs_placebo.png
+    - figA4_subwindow_heatmap.png
+    - figA5_size_effect.png
+    - figA6_volatility_liquidity.png
+
+Done!

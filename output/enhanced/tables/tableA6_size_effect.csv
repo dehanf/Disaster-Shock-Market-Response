@@ -1,0 +1,4 @@
+Size_Group,N,Mean_CAR_pct,t_stat,p_value
+Large,119,-4.94,-4.71,0.0
+Small,118,-3.89,-3.72,0.0003
+Difference (Welch),,-1.05,-0.71,0.4777

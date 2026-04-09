@@ -1,0 +1,3 @@
+Model,N,Mean_CAR_pct,BMP_t,BMP_p,GARCH_BMP_t,GARCH_BMP_p
+Market Model (OLS sigma),237,-4.42,-4.22,0.0,,
+"GARCH(1,1) sigma",237,-4.42,,,-5.3,0.0

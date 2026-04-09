@@ -1,0 +1,4 @@
+Estimation_Window,N_stocks,Mean_CAR_pct,t_stat,p_value
+"Default [-120,-6]",237,-4.42,-5.97,0.0
+"Short [-90,-6]",1,17.59,,
+"Long [-180,-6]",241,-4.96,-5.13,0.0

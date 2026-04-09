@@ -1,0 +1,64 @@
+Shift_Days,Sector,N,Placebo_CAR_pct,t_stat,p_value,Significant
+30,Automobiles,1,3.95,,,False
+30,Banks,9,0.59,0.15,0.8854,False
+30,Capital Goods,27,-0.24,-0.1,0.9194,False
+30,Commercial Services,6,-4.92,-0.77,0.475,False
+30,Consumer Durables,8,-6.51,-1.23,0.2578,False
+30,Consumer Services,31,-2.36,-1.41,0.1679,False
+30,Diversified Financials,35,-8.11,-2.4,0.022,True
+30,Energy,1,1.05,,,False
+30,Food & Beverage,41,-3.6,-1.62,0.1121,False
+30,Food Retailing,2,-6.66,-2.32,0.2589,False
+30,Healthcare Equipment,7,-1.15,-0.34,0.7421,False
+30,Household Products,1,-9.48,,,False
+30,Insurance,11,-8.29,-3.23,0.0091,True
+30,Materials,17,-3.01,-1.05,0.3094,False
+30,Real Estate,16,-2.01,-0.71,0.4877,False
+30,Retailing,13,0.61,0.12,0.9057,False
+30,Software & Services,1,32.65,,,False
+30,Telecommunication Services,2,5.22,0.38,0.7703,False
+30,Transportation,3,-12.91,-3.91,0.0595,False
+30,Utilities,5,-10.05,-3.59,0.023,True
+30,ALL STOCKS,237,-3.48,-3.85,0.0002,True
+60,Automobiles,1,1.2,,,False
+60,Banks,9,-3.18,-1.38,0.2053,False
+60,Capital Goods,27,-0.37,-0.13,0.8937,False
+60,Commercial Services,6,9.39,1.09,0.3255,False
+60,Consumer Durables,8,-1.49,-0.34,0.7462,False
+60,Consumer Services,31,-4.26,-3.61,0.0011,True
+60,Diversified Financials,35,1.42,0.51,0.6143,False
+60,Energy,1,6.43,,,False
+60,Food & Beverage,41,0.94,0.57,0.5744,False
+60,Food Retailing,2,-8.6,-3.75,0.1657,False
+60,Healthcare Equipment,7,6.03,1.39,0.2129,False
+60,Household Products,1,17.61,,,False
+60,Insurance,11,2.23,0.76,0.4623,False
+60,Materials,17,0.11,0.04,0.965,False
+60,Real Estate,16,-8.57,-2.12,0.0515,False
+60,Retailing,13,1.24,0.37,0.7172,False
+60,Software & Services,1,-13.81,,,False
+60,Telecommunication Services,2,-6.15,-3.22,0.1917,False
+60,Transportation,3,7.6,0.41,0.7247,False
+60,Utilities,5,-8.5,-3.97,0.0165,True
+60,ALL STOCKS,237,-0.54,-0.65,0.5193,False
+90,Automobiles,1,-6.67,,,False
+90,Banks,9,-6.33,-2.38,0.0443,True
+90,Capital Goods,27,0.44,0.19,0.8484,False
+90,Commercial Services,6,5.36,1.08,0.3284,False
+90,Consumer Durables,8,-3.17,-0.55,0.5994,False
+90,Consumer Services,31,6.93,4.33,0.0002,True
+90,Diversified Financials,35,-1.89,-0.78,0.4389,False
+90,Energy,1,-0.48,,,False
+90,Food & Beverage,41,7.26,3.74,0.0006,True
+90,Food Retailing,2,-3.22,-1.01,0.4977,False
+90,Healthcare Equipment,7,1.42,0.32,0.7583,False
+90,Household Products,1,3.22,,,False
+90,Insurance,11,-4.04,-1.04,0.3228,False
+90,Materials,17,6.49,2.17,0.0457,True
+90,Real Estate,16,9.53,2.0,0.0637,False
+90,Retailing,13,1.97,0.58,0.5716,False
+90,Software & Services,1,-10.1,,,False
+90,Telecommunication Services,2,-3.96,-1.29,0.4204,False
+90,Transportation,3,28.81,1.3,0.3244,False
+90,Utilities,5,13.64,1.82,0.1433,False
+90,ALL STOCKS,237,3.33,3.65,0.0003,True
