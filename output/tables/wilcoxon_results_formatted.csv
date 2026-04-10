@@ -1,20 +1,22 @@
 Sector,N,Median CAR(%),W-statistic,p-value,Significant
-Automobiles,1,2.43%,,N/A,False
-Consumer Durables,6,1.89%,10.0,1.0000,False
-Materials,13,0.67%,39.0,0.6848,False
-Healthcare Equipment,7,-0.99%,9.0,0.4688,False
-Household Products,1,-1.22%,,N/A,False
-Energy,1,-2.09%,,N/A,False
-Banks,10,-2.29%,15.0,0.2324,False
-Retailing,8,-2.55%,12.0,0.4609,False
-Utilities,5,-2.94%,1.0,0.1250,False
-Capital Goods,25,-3.04%,131.0,0.4108,False
-Consumer Services,18,-3.93%,38.0,0.0385,True
-Food & Beverage,29,-4.50%,110.0,0.0190,True
-Diversified Financials,28,-5.15%,114.0,0.0426,True
-Telecommunication Services,2,-5.34%,0.0,0.5000,False
-Insurance,9,-5.99%,6.0,0.0547,False
-Software & Services,1,-7.41%,,N/A,False
-Commercial Services,3,-7.62%,0.0,0.2500,False
-Real Estate,11,-11.63%,11.0,0.0537,False
-Transportation,2,-18.65%,0.0,0.5000,False
+Consumer Durables,8,4.99%,16.0,0.8438,False
+Retailing,14,3.84%,46.0,0.7148,False
+Capital Goods,30,2.24%,215.0,0.7303,False
+Software & Services,1,1.66%,,N/A,False
+Telecommunication Services,2,1.49%,1.0,1.0000,False
+Materials,22,1.33%,122.0,0.8987,False
+Healthcare Equipment,9,0.63%,22.0,1.0000,False
+Automobiles,1,-0.11%,,N/A,False
+Real Estate,17,-1.82%,61.0,0.4874,False
+Food & Beverage,45,-1.92%,429.0,0.3238,False
+Banks,17,-3.85%,54.0,0.3060,False
+Household Products,1,-4.36%,,N/A,False
+Food Retailing,4,-4.43%,3.0,0.6250,False
+Diversified Financials,39,-8.86%,123.0,0.0001,True
+Consumer Services,33,-9.39%,12.0,0.0000,True
+Transportation,3,-10.84%,0.0,0.2500,False
+Utilities,9,-11.27%,4.0,0.0273,True
+Commercial Services,7,-13.07%,14.0,1.0000,False
+Others,1,-13.08%,,N/A,False
+Insurance,13,-13.88%,3.0,0.0012,True
+Energy,3,-27.50%,1.0,0.5000,False
