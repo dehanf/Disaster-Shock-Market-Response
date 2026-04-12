@@ -1,22 +1,20 @@
 Sector,Trough Day,Trough CAR (%),End CAR Day+30 (%),Recovered by Day+30
-Capital Goods,0,0.0446,1.0753,True
+Capital Goods,0,0.0745,0.9527,True
+Materials,0,0.1161,4.6167,True
 Household Products,2,-6.0366,-4.8319,False
-Others,4,-13.8296,-13.6546,False
-Food & Beverage,5,-2.6329,-0.9335,False
+Food & Beverage,5,-3.2665,1.6161,True
+Consumer Durables,15,-3.4139,4.4325,True
 Energy,15,-12.1527,-11.7365,False
-Consumer Durables,18,-4.2889,-1.0222,False
+Transportation,19,-11.5586,-4.8781,False
 Software & Services,20,-8.6,3.1597,True
-Real Estate,21,-11.208,-4.3062,False
-Banks,23,-3.1511,-1.5348,False
+Healthcare Equipment,20,-3.3935,0.4693,True
+Real Estate,21,-12.3228,-6.5667,False
+Retailing,21,-4.6257,7.8699,True
 Telecommunication Services,23,-4.2862,4.5196,True
-Healthcare Equipment,24,-4.5774,1.7939,True
-Materials,25,-3.9105,-2.5693,False
+Banks,23,-2.7985,-1.2516,False
+Commercial Services,26,-6.3087,13.963,True
 Automobiles,26,-4.1497,-1.5127,False
-Retailing,26,-17.3485,-12.521,False
-Food Retailing,26,-10.9389,-4.117,False
-Commercial Services,26,-11.5993,-3.0426,False
-Diversified Financials,29,-9.0213,-8.1965,False
-Transportation,30,-18.502,-18.502,False
-Insurance,30,-11.5653,-11.5653,False
-Consumer Services,30,-11.0069,-11.0069,False
+Consumer Services,30,-11.2773,-11.2773,False
+Diversified Financials,30,-5.4333,-5.4333,False
+Insurance,30,-11.4484,-11.4484,False
 Utilities,30,-9.8987,-9.8987,False
