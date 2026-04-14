@@ -51,13 +51,13 @@ February~2025 to February~2026. After cleaning the dataset and removing outliers
 recorded the largest full-window CARs at $-17.93\%$ and $-12.07\%$
 respectively, while Transportation Services sustained a significant full-window
 loss of $-10.09\%$. Parametric cross-sectional $t$-tests and non-parametric
-Wilcoxon signed-rank tests identify three sectors with statistically
-significant negative median CARs: Insurance Services ($p=0.004$), Consumer
-Services ($p < 0.001$), and Diversified Financials ($p=0.008$), while the
-market-wide shock remains significant ($p = 0.013 <0.05$). Recovery analysis
+Wilcoxon signed-rank tests identify four sectors with statistically
+significant negative median CARs: Consumer Services ($p < 0.001$), Insurance 
+($p=0.004$), Diversified Financials ($p=0.008$), and Utilities ($p=0.027$), while the
+market-wide shock remains significant ($p = 0.013 < 0.05$). Recovery analysis
 shows that 10 of 19 sectors failed to recover within the 30-trading-day
 observation window. Market microstructure analysis reveals a two-phase
-response: a brief volatility spike at landfall ($t=-2.50$, $p=0.022$)
+response: a brief volatility spike at landfall ($t=-2.40$, $p=0.023$)
 followed by a persistent liquidity freeze, with total daily trading volume
 falling approximately 46.6\% post-event ($t=6.88$, $p<0.001$).
 \end{abstract}
@@ -342,9 +342,9 @@ sector-level disaggregation in Section~5.4.
     \textbf{Window} & \textbf{Mean CAR (\%)} & \textbf{Std Dev (\%)}   & \textbf{P value} \\
     \midrule
     Pre-event $[-5,-1]$      & $-0.56$& $3.75$ & $0.0346$\\
-    Landfall day $[0,0]$     & $-0.08$ & $2.43$   & $0.4457$\\
+    Landfall day $[0,0]$     & $-0.13$ & $2.33$   & $0.4457$\\
     Aftermath $[0,+5]$       & $-2.04$ & $6.02$   & $0.0000$\\
-    Full window $[-5,+30]$   & $-2.57$ & $14.55$  & $0.0125$\\
+    Full window $[-5,+30]$   & $-2.57$ & $14.56$  & $0.0125$\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -353,7 +353,7 @@ sector-level disaggregation in Section~5.4.
 \subsection{RQ2: Speed of Market Reaction}
 %%─────────────────────────────────────────────────────────────────────────────
 
-The landfall-day CAR$(0,0)$ of $-0.08\%$ is economically negligible and
+The landfall-day CAR$(0,0)$ of $-0.13\%$ is economically negligible and
 statistically insignificant ($p = 0.4457 >> 0.05$). The largest single-window loss of $-2.04\%$
 accumulated over the immediate aftermath window (Days~0 to~$+5$), while
 the full-window loss of $-2.57\%$ confirms that the shock continued
@@ -502,17 +502,15 @@ window. The market-wide shock is significant ($t=-2.52$, $p<0.05$).
 \end{table*}
 
 \textbf{Parametric--non-parametric divergence.}
-The Wilcoxon test identifies three sectors with significant median CARs:
-Food~\&~Beverage ($W=110$, $p=0.019$), Consumer Services ($W=38$,
-$p=0.039$), and Diversified Financials ($W=114$, $p=0.043$). Transportation
-is parametrically significant ($t=-14.11$, $p=0.045$) yet the Wilcoxon
+The Wilcoxon test identifies four sectors with significant median CARs: Consumer Services ($W=3$, $p<0.001$), Insurance ($W=0$, $p=0.004$), Diversified Financials ($W=97$, $p=0.008$), and Utilities ($W=4$, $p=0.027$). Transportation
+is parametrically significant ($t=-13.45$, $p=0.047$) yet the Wilcoxon
 test fails to reject the null ($p=0.500$), confirming that its large
 negative mean is driven by one or two extreme equities across only two
 constituent stocks rather than a uniform sector-wide crash. This divergence
 between the mean-based and median-based tests illustrates the value of
 reporting both: the $t$-test detects individual outlier shocks; the
 Wilcoxon test identifies sectors where the repricing was broad-based
-(RQ4: \textbf{substantial heterogeneity; three sectors with broad-based
+(RQ4: \textbf{substantial heterogeneity; four sectors with broad-based
 significant negative returns}).
 
 %%─────────────────────────────────────────────────────────────────────────────
@@ -531,44 +529,37 @@ the day it first recovered to zero (if at all).
   \resizebox{\columnwidth}{!}{%
   \begin{tabular}{@{}lrrrl@{}}
     \toprule
-    \textbf{Sector} & \textbf{Trough Day} & \textbf{Trough CAR (\%)} & \textbf{Recovery Day} & \textbf{Status} \\
+    \textbf{Sector} & \textbf{Trough Day} & \textbf{Trough CAR (\%)} & \textbf{Status} \\
     \midrule
-    Transportation         & 30 & $-18.27$ & $>30$  & Not recovered \\
-    Retailing              & 26 & $-17.17$ & $>30$  & Not recovered \\
-    Energy                 & 15 & $-12.15$ & $>30$  & Not recovered \\
-    Insurance              & 30 & $-11.92$ & $>30$  & Not recovered \\
-    Real Estate            & 25 & $-11.11$ & $>30$  & Not recovered \\
-    Consumer Services      & 30 & $-10.71$ & $>30$  & Not recovered \\
-    Food Retailing         & 26 & $-10.18$ & $>30$  & Not recovered \\
-    Utilities              & 30 & $ -9.84$ & $>30$  & Not recovered \\
-    Diversified Financials & 29 & $ -8.93$ & $>30$  & Not recovered \\
-    Materials              & 25 & $ -3.73$ & $>30$  & Not recovered \\
+    Real Estate            & 21 & $-12.32$ & Not recovered \\
+    Energy                 & 15 & $-12.15$ & Not recovered \\
+    Transportation         & 19 & $-11.56$ & Not recovered \\
+    Insurance              & 30 & $-11.45$ & Not recovered \\
+    Consumer Services      & 30 & $-11.28$ & Not recovered \\
+    Utilities              & 30 & $ -9.90$ & Not recovered \\
+    Household Products     &  2 & $ -6.04$ & Not recovered \\
+    Diversified Financials & 30 & $ -5.43$ & Not recovered \\
+    Automobiles            & 26 & $ -4.15$ & Not recovered \\
+    Banks                  & 23 & $ -2.80$ & Not recovered \\
     \midrule
-    Software \& Services   & 20 & $ -8.60$ & Day 25 & Recovered (5 days) \\
-    Commercial Services    & 26 & $ -8.32$ & Day 30 & Recovered (4 days) \\
-    Household Products     &  2 & $ -6.04$ & Day  6 & Recovered (4 days) \\
-    Healthcare Equipment   & 24 & $ -4.54$ & Day 26 & Recovered (2 days) \\
-    Telecommunication Services & 23 & $ -4.29$ & Day 26 & Recovered (3 days) \\
-    Consumer Durables      & 18 & $ -4.27$ & Day 21 & Recovered (3 days) \\
-    Automobiles            & 26 & $ -4.15$ & Day 27 & Recovered (1 day)  \\
-    Banks                  & 23 & $ -3.09$ & Day 24 & Recovered (1 day)  \\
-    Food \& Beverage       &  8 & $ -2.46$ & Day 28 & Recovered (20 days) \\
-    \midrule
-    Capital Goods          &  0 & $  0.04$ &   --   & Not affected       \\
+    Software \& Services   & 20 & $ -8.60$ & Recovered \\
+    Commercial Services    & 26 & $ -6.31$ & Recovered \\
+    Retailing              & 21 & $ -4.63$ & Recovered \\
+    Telecommunication Services & 23 & $ -4.29$ & Recovered \\
+    Consumer Durables      & 15 & $ -3.41$ & Recovered \\
+    Healthcare Equipment   & 20 & $ -3.39$ & Recovered \\
+    Food \& Beverage       &  5 & $ -3.27$ & Recovered \\
+    Materials              &  0 & $  0.12$ & Recovered \\
+    Capital Goods          &  0 & $  0.07$ & Recovered \\
     \bottomrule
   \end{tabular}}
 \end{table}
 
-10 of 19 sectors did not recover to their pre-event CAR baseline within
-the 30-trading-day window. The most persistent losses were in
-Transportation (trough $-18.27\%$ at Day~30), Retailing ($-17.17\%$ at
-Day~26), Energy ($-12.15\%$ at Day~15, but trending further negative),
-and Insurance ($-11.92\%$ at Day~30). Consumer Services also failed to
-recover, reaching its trough only at Day~30 itself.
+10 of 19 sectors did not recover to their pre-event CAR baseline within the 30-trading-day window. The most persistent losses were in Real Estate (trough $-12.32\%$ at Day~21), Energy ($-12.15\%$ at Day~15), Transportation ($-11.56\%$ at Day~19), and Insurance ($-11.45\%$ at Day~30). Consumer Services also failed to recover, reaching its trough of $-11.28\%$ at Day~30.
 
 Notably, the ASPI index returned above 23,000 by January~2026
 (Figure~\ref{fig:aspi}), suggesting broad market recovery within
-approximately 40~trading days; yet sector-level CARs for nine sectors
+approximately 40~trading days; yet sector-level CARs for ten sectors
 remained substantially negative at Day~$+30$. This divergence between
 index-level and sector-level recovery confirms that headline index recovery
 can mask persistent sector-specific damage and should not be used as the
@@ -620,7 +611,7 @@ Figures~\ref{fig:vol_ts} and~\ref{fig:liq_ts} show the day-by-day dynamics.
 
 \textbf{Volatility: a delayed spike followed by sustained compression.}
 The aggregate post-event mean spread (2.61~LKR) is significantly higher
-than the pre-event mean (2.21~LKR; $t=-2.398$, $p=0.023 < 0.05$). However,
+than the pre-event mean (2.21~LKR; $t=-2.40$, $p=0.023 < 0.05$). However,
 Figure~\ref{fig:vol_ts} reveals a two-phase pattern invisible in the
 aggregate statistic: a sharp intraday uncertainty spike in the immediate
 aftermath (peaking near 5.0~LKR around Day~$+10$), followed by progressive
@@ -631,7 +622,7 @@ Figure~\ref{fig:liq_ts} shows volume declining from approximately
 Day~$-10$, reaching a minimum on Day~0, briefly rebounding on Days~$+1$
 to~$+4$, then remaining well below pre-event levels through Day~$+30$.
 The aggregate decline of approximately 46.6\% is highly significant
-($t=6.88$, $p = 1.372 * e-8 <0.001$). The pre-event deterioration is consistent with
+($t=6.88$, $p < 0.001$). The pre-event deterioration is consistent with
 anticipation effects documented in RQ3: investors began reducing market
 participation as cyclone warnings intensified.
 
@@ -654,7 +645,7 @@ the extended freeze.
 
 \paragraph{RQ1 --- Market Shock.}
 The full-window market mean CAR of $-2.57\%$ establishes a meaningful
-aggregate shock ($t=-2.52$, $p = 0.0125 <0.001$), broadly consistent with the
+aggregate shock ($t=-2.52$, $p = 0.013 <0.05$), broadly consistent with the
 event-study literature on emerging-market natural disasters. Bourdeau-Brien
 and Kryzanowski~\cite{bourdeau2017} and Thai~\cite{thai2011} document
 comparable magnitudes for similar events in frontier and emerging markets.
@@ -682,9 +673,7 @@ implications: a sector's mean loss may be dominated by one or two extreme
 stocks even where the median stock is unaffected. Investors and
 policymakers should therefore assess \emph{both} the scale of the worst-hit
 firms \emph{and} the breadth of the industry-wide repricing before
-inferring systemic sector exposure. Diversified Financials and Consumer
-Services show concordant significance on both tests, providing stronger
-evidence of genuine sector-wide repricing than Transportation alone.
+inferring systemic sector exposure. Insurance, Utilities, Consumer Services, and Diversified Financials show concordant significance on both tests, providing stronger evidence of genuine sector-wide repricing than Transportation alone.
 
 \paragraph{RQ5 --- Recovery.}
 The finding that 10 of 19 sectors failed to recover within 30~trading days
@@ -731,11 +720,11 @@ features of emerging-market disaster responses.
 This paper provides the first systematic event-study quantification of
 Cyclone Ditwah's impact on the Colombo Stock Exchange. Addressing five
 research questions, we establish: (RQ1)~a highly significant market-wide
-shock ($-4.50\%$, $p<0.001$); (RQ2)~gradual price discovery consistent
+shock ($-2.57\%$, $p=0.013$); (RQ2)~gradual price discovery consistent
 with semi-strong efficiency; (RQ3)~statistically detectable pre-event
 anticipation in physically exposed sectors; (RQ4)~substantial sector
-heterogeneity, with three sectors showing broad-based significant repricing
-(Food~\&~Beverage, Consumer Services, Diversified Financials) and
+heterogeneity, with four sectors showing broad-based significant repricing
+(Consumer Services, Insurance, Diversified Financials, Utilities) and
 Transportation's large mean loss driven by individual outliers; and
 (RQ5)~persistent unrecovered losses in 10 of 19 sectors at Day~$+30$,
 despite index-level recovery within approximately 40~trading days.
