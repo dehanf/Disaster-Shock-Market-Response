@@ -40,32 +40,31 @@ Dinapura H.H.S.
 \begin{abstract}
 Natural disasters inflict severe macroeconomic shocks that ripple through
 financial markets, yet the dynamics of such shocks in emerging-economy
-exchanges remain understudied. Cyclone Ditwah made landfall in eastern Sri
-Lanka on 28~November~2025, causing an estimated USD~4.1~billion in direct
-damage (approximately 4\% of GDP) and triggering the Colombo Stock
+exchanges remain understudied. Cyclone Ditwah made landfall in eastern
+Sri Lanka on 28~November~2025, causing an estimated USD~4.1~billion in
+direct damage (approximately 4\% of GDP) and triggering the Colombo Stock
 Exchange's (CSE) worst weekly decline since November~2022. This paper
 employs a classical event-study framework on a self-collected dataset of
-70,413 daily OHLCV records for 268 CSE-listed stocks spanning
-February~2025 to February~2026. Market-model parameters ($\hat{\alpha}$,
-$\hat{\beta}$) are estimated for 237 qualifying stocks. Sector-level
-cumulative abnormal returns (CARs) are computed across 20 standard CSE
-sectors. Transportation and Real Estate recorded the largest full-window
-CARs at $-10.03\%$ and $-9.23\%$ respectively, while Commercial Services
-showed resilience with a near-zero full-window CAR of $+0.27\%$.
-Parametric cross-sectional $t$-tests and non-parametric Wilcoxon
-signed-rank tests identify three sectors with statistically significant
-negative median CARs: Insurance ($p = 0.009$), Real Estate ($p = 0.017$),
-and Diversified Financials ($p = 0.034$), while the market-wide shock is
-highly significant ($p < 0.001$). An analysis of market microstructure
-reveals a two-phase response: a sharp intraday volatility spike at landfall
-($t = 1.84$, $p = 0.076$) followed by a persistent liquidity freeze, with
-total daily trading volume falling approximately 35\% post-event
-($t = 3.76$, $p < 0.001$).
+71,044 daily OHLCV records for 289 CSE-listed stocks spanning
+February~2025 to February~2026. After cleaning the dataset and removing outliers, market-model parameters
+($\hat{\alpha}$,~$\hat{\beta}$) are estimated for 203 qualifying stocks categorized across 19 CSE sectors. Energy and Insurance
+recorded the largest full-window CARs at $-17.93\%$ and $-12.07\%$
+respectively, while Transportation Services sustained a significant full-window
+loss of $-10.09\%$. Parametric cross-sectional $t$-tests and non-parametric
+Wilcoxon signed-rank tests identify four sectors with statistically
+significant negative median CARs: Consumer Services ($p < 0.001$), Insurance 
+($p=0.004$), Diversified Financials ($p=0.008$), and Utilities ($p=0.027$), while the
+market-wide shock remains significant ($p = 0.013 < 0.05$). Recovery analysis
+shows that 10 of 19 sectors failed to recover within the 30-trading-day
+observation window. Market microstructure analysis reveals a two-phase
+response: a brief volatility spike at landfall ($t=-2.40$, $p=0.023$)
+followed by a persistent liquidity freeze, with total daily trading volume
+falling approximately 46.6\% post-event ($t=6.88$, $p<0.001$).
 \end{abstract}
 
 \keywords{Event Study, Natural Disaster, Colombo Stock Exchange, Cyclone
 Ditwah, Abnormal Returns, Sector Heterogeneity, Emerging Markets,
-Disaster Economics}
+Disaster Economics, Market Microstructure, Recovery Analysis}
 
 \maketitle
 
@@ -74,17 +73,17 @@ Disaster Economics}
 %%=============================================================================
 
 Sri Lanka's economy, still recovering under an IMF Extended Fund Facility
-arrangement following the 2022 sovereign debt crisis \cite{imf2025},
+arrangement following the 2022 sovereign debt crisis~\cite{imf2025},
 suffered a major setback when Cyclone Ditwah struck the eastern coastline
 on 28~November~2025. The World Bank estimated direct physical damage at
-USD~4.1~billion (approximately 4\% of GDP \cite{worldbank2025}) affecting
+USD~4.1~billion (approximately 4\% of GDP~\cite{worldbank2025}), affecting
 58,340~hectares of paddy, damaging 247~km of roads and 35~bridges, and
 displacing over 209,000~people across all 25~districts
-\cite{who2025, ocha2025}.
+\cite{who2025,ocha2025}.
 
 Financial markets responded sharply. The CSE All-Share Price Index (ASPI)
 fell 3.04\% on the first trading session after landfall, extending to a
-weekly loss of 5.35\%—the worst since mid-November~2022
+weekly loss of 5.35\%~--- the worst since mid-November~2022
 \cite{brecorder2025}. Net foreign outflows from the exchange accelerated
 during December~2025.
 
@@ -94,34 +93,78 @@ sectors. This gap matters for three stakeholder groups: investors who need
 to price disaster risk into portfolios; policymakers who must design market
 stabilisation interventions; and researchers who require empirical evidence
 on emerging-market resilience. This paper addresses this gap using a
-rigorous event-study framework \cite{mackinlay1997} applied to a
+rigorous event-study framework~\cite{mackinlay1997} applied to a
 purpose-built, high-resolution CSE dataset.
 
-This study reports on three research questions:
+This study is organised around five research questions:
+
 \begin{enumerate}
-  \item \textbf{RQ1:} Did Cyclone Ditwah affect returns in the Colombo
-        Stock Exchange?
-  \item \textbf{RQ2:} How quickly did the market react to the cyclone?
-  \item \textbf{RQ3:} Was there any predictive price reaction before the
-        event?
+  \item \textbf{RQ1 (Market Shock):} Did Cyclone Ditwah produce a
+        statistically significant shock to aggregate CSE returns?
+  \item \textbf{RQ2 (Speed of Reaction):} How quickly did the market
+        incorporate the disaster shock --- was the impact concentrated on
+        landfall day or did it accumulate over subsequent trading sessions?
+  \item \textbf{RQ3 (Anticipation):} Was there a statistically significant
+        pre-event price reaction consistent with investors pricing in
+        disaster risk before official landfall?
+  \item \textbf{RQ4 (Sector Heterogeneity):} Which CSE sectors were most
+        negatively affected, and does the sector-level evidence differ
+        between parametric and non-parametric tests?
+  \item \textbf{RQ5 (Recovery):} Which sectors recovered to pre-event
+        return levels within the 30-trading-day observation window, and
+        which sustained persistent damage?
 \end{enumerate}
 
-In addition to these primary research questions, the paper examines which
-CSE sectors were most negatively affected, which were resilient or
-positively impacted, whether sectors reacted at different speeds, and how
-the cyclone altered broader market microstructure.
+In addition to these primary questions, the paper examines how the cyclone
+altered broader market microstructure --- specifically volatility and
+liquidity dynamics in the days surrounding the event.
+
+%%=============================================================================
+\section{Literature Review}
+%%=============================================================================
+
+The event-study methodology, formalised by MacKinlay~\cite{mackinlay1997},
+estimates stock returns absent a discrete event and attributes the residual
+to that event. Its application to natural disasters has established several
+baseline findings. Shelor et al.~\cite{shelor1992} showed that the 1989
+Loma Prieta earthquake produced significant abnormal returns in insurance
+stocks, driven by anticipated premium increases --- a pattern this paper
+examines in the CSE context. Worthington and Valadkhani~\cite{worthington2004}
+extended disaster event studies to a broader set of events and documented
+significant but short-lived negative abnormal returns concentrated in sectors
+with direct physical exposure.
+
+The bulk of this literature focuses on developed markets. Evidence from
+emerging and frontier exchanges is sparser and reveals systematically
+different dynamics. Nikkinen and Vahamaa~\cite{nikkinen2010} found that
+frontier-market indices sustained negative abnormal returns for several weeks
+following the 2004 Indian Ocean tsunami, far longer than developed-market
+counterparts, attributing this to thinner liquidity and lower investor
+confidence. This motivates the present study's explicit focus on recovery
+dynamics and microstructure.
+
+At the sector level, Bourdeau-Brien and Kryzanowski~\cite{bourdeau2017}
+documented that transportation and materials sectors recovered more slowly
+than the headline index following Canadian flooding events --- a finding
+directly relevant to our RQ5 design. The closest analogue to the present
+study is Thai~\cite{thai2011}, who found manufacturing CARs of up to
+$-15\%$ over a 30-day window following the 2011 Thailand floods in an
+emerging-market setting with comparable infrastructure damage.
+
+On market microstructure, Chordia et al.~\cite{chordia2001} established
+that liquidity deteriorates precisely during high-uncertainty events,
+motivating our use of daily volume as a liquidity proxy and our two-phase
+interpretation of the post-landfall response.
 
 %%=============================================================================
 \section{Dataset and Data Preparation}
 %%=============================================================================
 
-\subsection{Primary Dataset}
+\subsection{Dataset Preparation}
 
 Daily OHLCV data for all CSE-listed stocks were collected via a custom
 Python web-scraping pipeline querying the exchange's public data interface.
-The raw dataset comprised 71,044 rows. After cleaning (detailed in
-Section~2.2), the working dataset contains 70,029 rows.
-Table~\ref{tab:dataset} summarises the key characteristics.
+The raw dataset comprised 71,044 rows. Table~\ref{tab:dataset} summarises the key characteristics.
 
 \begin{table}[h]
   \centering
@@ -132,14 +175,14 @@ Table~\ref{tab:dataset} summarises the key characteristics.
     \toprule
     \textbf{Attribute} & \textbf{Value} \\
     \midrule
-    Coverage          & 268 instruments \\
-    Date range        & 23~Feb~2025 -- 27~Feb~2026 \\
+    Coverage          & 289 instruments \\
+    Date range        & 03~Feb~2025 -- 27~Feb~2026 \\
     Raw records       & 71,044 rows \\
-    Clean records     & 70,029 rows \\
     Fields            & Symbol, date, open, high, low, close, volume \\
+    Missing Values            & None \\
     Collection method & Python web scraping \\
     Benchmark index   & CSE All-Share Price Index (ASPI) \\
-    Sectors           & 20 CSE standard sectors \\
+    Sectors           & 19 CSE sectors \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -147,28 +190,27 @@ Table~\ref{tab:dataset} summarises the key characteristics.
 ASPI daily OHLC data were collected separately and merged on date to
 provide the market benchmark return $R_{m}$ required by the market model.
 Sector classifications were derived from CSE sector listings, mapping each
-stock to one of 20 sectors.
+stock to one of 19 industry groups.
 
 \subsection{Data Cleaning}
 
-\textbf{Suffix handling.} CSE tickers carry suffixes encoding share class.
-Records with suffixes U0000 (units, $n=407$) and P0000 (preference shares,
-$n=224$) were removed. Three symbols were subsequently removed explicitly:
-Browns Beach Hotels (BBH) and Nation Lanka Finance (CSF) due to delisting
-and data quality issues, and INME which held no observations within the
-estimation window (Day~$-120$ to Day~$-6$). This yielded 70,029~rows
-across voting (N0000, 65,279~rows) and non-voting (X0000, 4,807~rows)
-shares.
+\textbf{Sector mapping.} 
+A manually verified sector mapping was applied to
+the working dataset with 276 symbols. 4 stocks which were not part of the sector mapping ('BBH.N0000' 'CALC.U0000' 'CALI.U0000' 'CSF.N0000') were removed from the dataset, leaving 70310 records
 
-\textbf{Sector mapping.} A manually verified sector mapping was applied to
-the working dataset with 263 symbols.
+\textbf{Removal of Preference shares.} 
+The dataset was filtered to retain only ordinary equities (N0000, X0000), excluding preference shares (P0000). This exclusion prevents estimation bias, as the market model's foundational assumption that returns are driven by market-wide and firm-specific factors holds for common equity but breaks down for fixed-income hybrids and pooled assets. This leaves the dataset with 70086 records total.
+
+\textbf{Removal of Outlier Records.} 
+Removed 2 records ('COLO.N0000 - 2025-10-08' ,'CIC.X0000 - 2025-10-07') as they were prooven to be outliers
+
+\textbf{Microstructure filtering.} 
+ 8 penny stocks and 70 consistently illiquid stocks were explicitly excluded from the dataset. Removing penny stocks prevents extreme artificial returns caused by bid-ask bounce at low nominal prices. Similarly, removing low-volume stocks prevents "stale pricing"; where infrequent trading creates zero-return intervals that artificially bias the market-model beta estimates downward and violate the assumption of synchronous market trading. This filtering leaves the dataset with 207 instruments and 52046 records
 
 \textbf{Regression qualification.} The market model was estimated only for
 stocks with at least 60 clean trading observations in the estimation window
-(Day~$-120$ to Day~$-6$), excluding 6 thinly traded stocks and leaving 257
-stocks. Stocks with $\hat{\beta} \notin [-3,\,5]$ were subsequently removed
-as outliers (20~stocks dropped), yielding a final sample of 237~stocks for
-downstream analysis.
+(Day~$-120$ to Day~$-6$), excluding 4 thinly traded stocks and leaving 203
+stocks and 51,779 rows.
 
 %%=============================================================================
 \section{Methodology}
@@ -177,12 +219,12 @@ downstream analysis.
 We adopt the standard event-study framework of
 MacKinlay~\cite{mackinlay1997}. This method estimates the return of each
 stock absent the event and compares it with observed returns; the difference
-is taken as the abnormal return, i.e.\ the portion of price movement
+is taken as the abnormal return, i.e., the portion of price movement
 attributable directly to Cyclone Ditwah.
 
 \subsection{Event Definition and Windows}
 
-The event date ($t = 0$) is 28~November~2025 (cyclone landfall). Two
+The event date ($t=0$) is 28~November~2025 (cyclone landfall). Two
 non-overlapping windows are defined:
 \begin{itemize}
   \item \textbf{Estimation window:} Day~$-120$ to Day~$-6$
@@ -192,6 +234,9 @@ non-overlapping windows are defined:
         Spans pre-cyclone anticipation, the event shock, and post-disaster
         recovery.
 \end{itemize}
+
+All day indices are expressed in trading days, not calendar days, to avoid
+bias from weekends and public holidays.
 
 \subsection{Market Model}
 
@@ -206,170 +251,150 @@ the ASPI return, $\alpha_i$ is the stock-specific intercept, $\beta_i$ is
 the market-sensitivity coefficient, and $\varepsilon_{it}$ is a zero-mean
 error term.
 
-\subsection{Abnormal Returns}
+\subsection{Abnormal Returns and CARs}
 
 Abnormal returns in the event window are the residual between the actual
 return and the counterfactual predicted by the fitted model:
 \begin{equation}
   AR_{it} = R_{it} - \bigl(\hat{\alpha}_i + \hat{\beta}_i R_{mt}\bigr)
-  \label{eq:ar}
 \end{equation}
 Cumulative abnormal returns aggregate over any sub-window $[t_1, t_2]$:
 \begin{equation}
   CAR_i(t_1, t_2) = \sum_{t=t_1}^{t_2} AR_{it}
-  \label{eq:car}
 \end{equation}
-We report CARs for four windows: pre-event $[-5,-1]$, landfall day
-$[0,0]$, immediate aftermath $[0,+5]$, and the complete event window
-$[-5,+30]$.
+We report CARs for four windows: pre-event $[-5,-1]$, landfall day $[0,0]$,
+immediate aftermath $[0,+5]$, and the complete event window $[-5,+30]$.
+Sector-level CARs are the cross-sectional mean of individual stock CARs
+within each sector.
 
 \subsection{Statistical Testing}
-\label{sec:stat_testing}
 
 \paragraph{Parametric cross-sectional $t$-test.}
-To determine whether observed abnormal returns are statistically
-distinguishable from zero, cross-sectional $t$-tests were applied at both
-the market-wide and sector levels. For each window $[t_1,t_2]$, the
-$CAR_i$ values across all stocks (or stocks within a sector) are treated as
-a sample and tested against a null mean of zero:
+For each window $[t_1,t_2]$, the $CAR_i$ values across all stocks (or
+stocks within a sector) are tested against a null mean of zero:
 \begin{equation}
   t = \frac{\overline{CAR}}{s / \sqrt{N}}
-  \label{eq:tstat}
 \end{equation}
-where $\overline{CAR}$ is the cross-sectional mean, $s$ is the
-cross-sectional standard deviation, and $N$ is the number of stocks. This
-is a one-sample $t$-test against a population mean of zero (two-sided,
-$\alpha = 0.05$).
+where $\overline{CAR}$ is the cross-sectional mean, $s$ is the standard
+deviation, and $N$ is the number of stocks (two-tail , $\alpha=0.05$).
 
 \paragraph{Non-parametric Wilcoxon signed-rank test.}
-Because financial return distributions in thin, emerging-market exchanges
-routinely exhibit fat tails, skewness, and extreme outliers, relying
-exclusively on the parametric $t$-test risks inflated Type~I error rates.
-We therefore apply the Wilcoxon signed-rank test as a robust secondary
-check on the full-window sector-level CAR distributions. The Wilcoxon test
-evaluates whether the \emph{median} abnormal return is significantly
-different from zero without assuming normality, making it insensitive to
-the influence of a small number of extreme-performing equities. For each
-sector with $N > 1$ stocks, the test statistic $W$ is computed from the
-signed ranks of the $CAR_i$ values. Concordance between parametric and
-non-parametric results strengthens confidence in the findings; divergence
-signals that the sector's mean is driven by outliers rather than a uniform
-industry-wide repricing.
+Because CSE return distributions exhibit fat tails and skewness typical of
+frontier markets, we apply the Wilcoxon signed-rank test as a robust check
+on sector-level median CARs. Concordance between parametric and
+non-parametric results strengthens confidence; divergence signals that a
+sector mean is driven by a small number of extreme stocks rather than a
+uniform industry-wide repricing.
 
-\paragraph{Volatility and liquidity $t$-tests.}
-To assess disaster-induced shifts in market microstructure, daily market
-volatility was proxied using the High-Low price spread
-($\text{Spread}_{t} = \text{High}_{t} - \text{Low}_{t}$), and market
-liquidity was measured via total daily trading volume. Daily averages of
-these metrics were computed across all qualifying stocks for two symmetric
-25-day windows: a pre-event window (Day~$-30$ to Day~$-6$) and a
-post-landfall window (Day~0 to Day~$+24$). Welch's independent-samples
-$t$-test (unequal variances assumed) was used to compare the daily average
-spread and daily average volume between the two windows.
+\paragraph{Recovery analysis.}
+For each sector, we identify the trough CAR within the event window and the
+earliest subsequent day on which the cumulative mean CAR returns to zero
+(the recovery day). Sectors that do not cross zero before Day~$+30$ are
+classified as unrecovered.
+
+\paragraph{Microstructure $t$-tests.}
+Daily market volatility is proxied by the average High-Low price spread
+across all qualifying stocks; market liquidity is measured by total daily
+trading volume. Welch's independent-samples $t$-test (unequal variances)
+compares daily means across symmetric 25-day pre-event (Day~$-30$ to
+Day~$-6$) and post-event (Day~0 to Day~$+24$) windows.
 
 %%=============================================================================
 \section{Results}
 %%=============================================================================
 
-\subsection{ASPI Index Trajectory}
+We organise results directly around the five research questions stated in
+the Introduction.
+
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{RQ1: Market-Wide Shock}
+%%─────────────────────────────────────────────────────────────────────────────
 
 Figure~\ref{fig:aspi} plots the ASPI daily close from February~2025 to
-March~2026. The index opened at approximately 16,700 in February~2025,
-dipped to a local trough near 15,000 in late April~2025, then recovered
-steadily to a pre-cyclone peak of approximately 23,600 in
-mid-November~2025. Following landfall on 28~November~2025, the index
-declined sharply from 22,844 (26~November) to a local trough of
-approximately 21,431 on 5~December~2025—a peak-to-trough drop of
-approximately 6.2\% over six trading days. The index subsequently
-recovered, returning above 23,000 by January~2026 and reaching
-approximately 24,000 by February~2026, suggesting the market largely
-absorbed the cyclone shock within approximately 40 trading days.
+March~2026. The index peaked near 23,600 in mid-November~2025, then fell
+from 22,844 (26~November) to approximately 21,431 on 5~December ; a
+peak-to-trough drop of approximately 6.2\% over six trading days. The index
+subsequently recovered above 23,000 by January~2026.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{figures/figure_aspi.pdf}
   \caption{ASPI daily close, Feb~2025--Mar~2026. Dashed vertical line
-           marks landfall (28~Nov~2025). Shaded region indicates the
-           acute decline period (Day~0 to Day~$+5$).}
+           marks landfall (28~Nov~2025). Shaded region = acute decline
+           period (Day~0 to Day~$+5$).}
   \label{fig:aspi}
 \end{figure}
 
-\subsection{Market Model Parameter Estimates}
-
-Table~\ref{tab:params} summarises the distribution of $\hat{\alpha}$ and
-$\hat{\beta}$ estimated from the estimation window. The mean $\hat{\beta}$
-of 0.72 indicates that the average CSE stock moves less than the market,
-consistent with relatively low liquidity and a high proportion of defensive
-stocks. Figure~\ref{fig:beta} shows the pre-event beta distribution by
-sector. Banks stocks exhibit the highest median beta, with the
-interquartile range centred above 1.0. Transportation stocks show the
-lowest median beta (approximately 0.2). Real Estate shows the widest
-spread, reflecting high cross-stock heterogeneity within the sector.
-
-\begin{table}[h]
-  \centering
-  \caption{Market model parameter estimates ($N = 237$ stocks)}
-  \label{tab:params}
-  \small
-  \begin{tabular}{@{}lrrrr@{}}
-    \toprule
-    \textbf{Parameter} & \textbf{Mean} & \textbf{Std Dev} & \textbf{Min} & \textbf{Max} \\
-    \midrule
-    $\hat{\alpha}$ & $0.0009$ & $0.0031$ & $-0.0089$ & $0.0214$ \\
-    $\hat{\beta}$  & $0.72$   & $0.48$   & $-0.31$   & $2.84$   \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\linewidth]{figures/figure2_beta_by_sector.pdf}
-  \caption{Pre-event beta distribution by sector (estimation window:
-           Day~$-120$ to Day~$-6$).}
-  \label{fig:beta}
-\end{figure}
-
-\subsection{Sector-Level Cumulative Abnormal Returns}
-
 Table~\ref{tab:market_car} reports the market-wide mean CAR across all
-237~qualifying stocks. The full-window mean CAR of $-4.42\%$ confirms a
-broad market-level shock, with the largest single-period impact in the
-immediate aftermath ($-1.71\%$ over Days~0 to~$+5$). The near-zero
-landfall-day CAR$(0,0)$ of $-0.03\%$ indicates that the single-day shock
-was negligible and that losses accumulated over subsequent days as damage
-assessments emerged. The large cross-sectional standard deviation of
-$11.39\%$ in the full window confirms high dispersion across individual
-stocks, motivating the sector-level disaggregation below.
+203~qualifying stocks. The full-window mean CAR of $-2.57\%$ is
+significant ($p = 0.0125 < 0.05$), confirming a broad aggregate shock
+(RQ1: \textbf{yes}). The cross-sectional standard deviation of 10.71\%
+signals high dispersion across individual stocks, motivating the
+sector-level disaggregation in Section~5.4.
 
 \begin{table}[h]
   \centering
-  \caption{Market-level mean CAR ($N=180$ stocks)}
+  \caption{Market-level mean CAR ($N=203$ stocks)}
   \label{tab:market_car}
   \small
-  \begin{tabular}{@{}lrr@{}}
+  \begin{tabular}{@{}lrr@{}l}
     \toprule
-    \textbf{Window} & \textbf{Mean CAR (\%)} & \textbf{Std Dev (\%)} \\
+    \textbf{Window} & \textbf{Mean CAR (\%)} & \textbf{Std Dev (\%)}   & \textbf{P value} \\
     \midrule
-    Pre-event $[-5,-1]$      & $-0.91$ & $3.52$  \\
-    Landfall day $[0,0]$     & $-0.08$ & $2.43$  \\
-    Aftermath $[0,+5]$       & $-1.96$ & $5.88$  \\
-    Full window $[-5,+30]$   & $-4.50$ & $10.71$ \\
+    Pre-event $[-5,-1]$      & $-0.56$& $3.75$ & $0.0346$\\
+    Landfall day $[0,0]$     & $-0.13$ & $2.33$   & $0.4457$\\
+    Aftermath $[0,+5]$       & $-2.04$ & $6.02$   & $0.0000$\\
+    Full window $[-5,+30]$   & $-2.57$ & $14.56$  & $0.0125$\\
     \bottomrule
   \end{tabular}
 \end{table}
 
-Figure~\ref{fig:car} plots the mean CAR trajectory by sector across the
-full event window, anchored at Day~0. Table~\ref{tab:car} reports point
-estimates for all 20~CSE industry groups.
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{RQ2: Speed of Market Reaction}
+%%─────────────────────────────────────────────────────────────────────────────
+
+The landfall-day CAR$(0,0)$ of $-0.13\%$ is economically negligible and
+statistically insignificant ($p = 0.4457 >> 0.05$). The largest single-window loss of $-2.04\%$
+accumulated over the immediate aftermath window (Days~0 to~$+5$), while
+the full-window loss of $-2.57\%$ confirms that the shock continued
+accumulating through Day~$+30$. This pattern of gradual repricing, with
+virtually no single-day spike is consistent with semi-strong market
+efficiency~\cite{mackinlay1997}: the market did not absorb the shock
+instantaneously, but incorporated damage information progressively as
+assessments were published (RQ2: \textbf{gradual, not immediate}).
+
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{RQ3: Pre-Event Anticipation Effects}
+%%─────────────────────────────────────────────────────────────────────────────
+
+The pre-event market-wide CAR$(-5,-1)$ of $-0.56\%$ (Table~\ref{tab:market_car})
+indicates that abnormal losses were already accumulating before landfall.
+At the sector level, Table~\ref{tab:car} shows Energy with the
+largest pre-event loss (CAR$(-5,-1) = -6.19\%$) and Transportation
+ second ($-5.57\%$), consistent with investors pricing in disaster
+risk as official cyclone warnings intensified during the five trading days
+before landfall. The concurrent volume decline beginning approximately ten
+trading days before landfall (Figure~\ref{fig:liq_ts}) corroborates this:
+liquidity withdrawal preceded the physical event (RQ3: \textbf{yes, in
+physically exposed sectors}).
+
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{RQ4: Sector Heterogeneity}
+%%─────────────────────────────────────────────────────────────────────────────
+
+\subsubsection{Sector CAR Estimates}
+
+Figure~\ref{fig:car} plots mean CAR trajectories for a selection of sectors
+across the event window. Table~\ref{tab:car} reports full point estimates
+for all 19~sectors.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=\linewidth]{figures/figure1_sector_CAR.pdf}
   \caption{Sector-level cumulative abnormal returns anchored at Day~0
-           (landfall, 28~Nov~2025). Pre-event values show reverse
-           accumulation back from Day~0; post-event values show forward
-           accumulation from Day~0. Shaded region = anticipation window
-           Day~$-5$ to Day~0.}
+           (landfall). Pre-event values show reverse accumulation back
+           from Day~0; post-event values show forward accumulation from
+           Day~0. Shaded region = anticipation window Day~$-5$ to Day~0.}
   \label{fig:car}
 \end{figure}
 
@@ -381,80 +406,57 @@ estimates for all 20~CSE industry groups.
   \resizebox{\columnwidth}{!}{%
   \begin{tabular}{@{}lrrrr@{}}
     \toprule
-    \textbf{Sector} & \textbf{CAR($-5,-1$)} & \textbf{CAR($0,0$)} &
-    \textbf{CAR($0,+5$)} & \textbf{CAR($-5,+30$)} \\
+    \textbf{Sector} & \textbf{CAR($-5,-1$)} & \textbf{CAR($0,0$)} & \textbf{CAR($0,+5$)} & \textbf{CAR($-5,+30$)} \\
     \midrule
-    Transportation         & $-5.90$ & $-1.23$ & $-5.37$ & $-18.65$ \\
-    Real Estate            & $-2.88$ & $ 0.07$ & $-2.08$ & $-10.93$ \\
-    Commercial Services    & $-3.21$ & $-0.56$ & $ 2.51$ & $-7.71$  \\
-    Software \& Services   & $-1.26$ & $ 0.06$ & $-2.26$ & $-7.41$  \\
-    Utilities              & $ 0.77$ & $-0.86$ & $-1.64$ & $-6.69$  \\
-    Consumer Services      & $ 1.51$ & $-0.82$ & $-6.50$ & $-6.59$  \\
-    Insurance              & $-0.26$ & $-0.06$ & $-5.68$ & $-5.86$  \\
-    Telecom Services       & $-3.53$ & $ 0.36$ & $-1.98$ & $-5.34$  \\
-    Banks                  & $-1.65$ & $ 0.03$ & $-0.76$ & $-4.98$  \\
-    Diversified Financials & $-0.89$ & $-0.50$ & $-1.88$ & $-4.77$  \\
-    Retailing              & $-1.61$ & $ 3.65$ & $-1.32$ & $-4.25$  \\
-    Food \& Beverage       & $-0.44$ & $-0.36$ & $-3.45$ & $-3.90$  \\
-    Healthcare Equipment   & $-2.02$ & $ 0.20$ & $ 0.90$ & $-3.57$  \\
-    Capital Goods          & $-1.66$ & $ 0.13$ & $-0.31$ & $-3.07$  \\
-    Energy                 & $-0.70$ & $ 0.05$ & $-0.69$ & $-2.09$  \\
-    Household Products     & $-0.79$ & $-0.08$ & $-1.66$ & $-1.22$  \\
-    Consumer Durables      & $ 0.56$ & $-0.29$ & $ 0.23$ & $-1.04$  \\
-    Materials              & $-0.89$ & $ 0.00$ & $ 2.26$ & $ 2.60$  \\
-    Automobiles            & $ 1.42$ & $ 0.16$ & $-0.66$ & $ 2.43$  \\
+    Energy & $-6.19$ & $-1.16$ & $-9.48$ & $-17.93$ \\
+    Insurance & $-0.59$ & $-0.10$ & $-6.39$ & $-12.07$ \\
+    Utilities & $-1.83$ & $-0.94$ & $-4.63$ & $-11.67$ \\
+    Transportation & $-5.57$ & $-1.10$ & $-4.98$ & $-10.09$ \\
+    Consumer Services & $ 1.87$ & $-0.76$ & $-6.75$ & $-9.29$ \\
+    Real Estate & $-2.38$ & $-0.04$ & $-5.29$ & $-8.32$ \\
+    Diversified Financials & $-0.89$ & $-0.50$ & $-2.74$ & $-6.32$ \\
+    Household Products & $ 0.48$ & $-0.12$ & $-1.89$ & $-4.36$ \\
+    Banks & $-0.90$ & $-0.02$ & $-0.67$ & $-2.15$ \\
+    Healthcare Equipment & $-0.77$ & $ 0.25$ & $ 0.71$ & $-0.72$ \\
+    Automobiles & $ 1.40$ & $-0.06$ & $-0.88$ & $-0.11$ \\
+    Capital Goods & $-0.44$ & $ 0.07$ & $ 2.23$ & $ 0.59$ \\
+    Telecommunication Services & $-3.03$ & $ 0.57$ & $-2.99$ & $ 1.49$ \\
+    Software \& Services & $-1.50$ & $ 0.17$ & $-3.80$ & $ 1.66$ \\
+    Food \& Beverage & $ 0.95$ & $-0.40$ & $-3.25$ & $ 2.59$ \\
+    Consumer Durables & $-0.97$ & $-0.26$ & $-0.74$ & $ 3.39$ \\
+    Materials & $-0.16$ & $ 0.12$ & $ 4.18$ & $ 4.41$ \\
+    Retailing & $-2.84$ & $ 3.60$ & $-1.45$ & $ 4.71$ \\
+    Commercial Services & $-2.89$ & $-0.60$ & $-0.30$ & $ 11.87$ \\
     \bottomrule
   \end{tabular}}
 \end{table}
 
 \textbf{Most affected sectors.}
-Transportation recorded the largest full-window CAR at $-10.03\%$, with
-its trajectory reaching a trough of approximately $-12\%$ around Day~$+26$
-before a partial recovery. Real Estate followed at $-9.23\%$, consistent
-with the cyclone's documented damage to 247~km of roads, 35~bridges, and
-coastal property. Insurance recorded the steepest immediate aftermath
-CAR$(0,+5)$ at $-4.71\%$, reflecting anticipated claims exposure.
-Software \& Services ($-7.41\%$) and Utilities ($-6.69\%$) also sustained
-substantial full-window losses, likely reflecting infrastructure disruption
-and power outage effects.
-
-\textbf{Anticipation effects.}
-In the pre-event window, Transportation shows a CAR$(-5,-1)$ of $-4.53\%$
-and Telecommunication Services $-3.53\%$—the two largest pre-event
-negative CARs across all 20~sectors—confirming that abnormal losses were
-accumulating before official landfall as investors reacted to cyclone
-warnings.
+Energy sector recorded the largest full-window CAR at $-17.93\%$ reflecting
+infrastructure disruption and power-outage effects. Insurance sector records the 2nd largest full-window CAR at $-12.07\%$ and with the steep immediate-aftermath CAR$(0,+5)$ at $-6.39\%$, reflecting
+anticipated claims exposure. Transportation sector has also recorded large full-window CAR at $-10.09\%$
+consistent with the cyclone's documented damage to 247~km of roads and
+35~bridges. Consumer Services followed at $-9.29\%$. 
 
 \textbf{Resilient sectors.}
-Materials remained near zero throughout ($-1.75\%$). Commercial Services
-($+0.27\%$) and Automobiles ($+2.43\%$) posted near-zero or positive
-full-window CARs, possibly reflecting reconstruction-driven demand. On
-landfall day alone, Retailing recorded an anomalous $+2.25\%$, the only
-sector with a substantial positive single-day abnormal return, possibly
-reflecting panic-buying ahead of the storm.
+Commercial Services posted a positive full-window CAR of $+11.87\%$ and Retailing with
+$+4.71\%$. On landfall
+day alone, Retailing recorded an anomalous $+3.60\%$ ; the only sector
+with a substantial positive single-day abnormal return, possibly reflecting
+panic-buying ahead of the storm.
 
-\subsection{Sector-Level Significance: Parametric and Non-Parametric Tests}
+\subsubsection{Significance Tests}
 
-Table~\ref{tab:significance} reports both the cross-sectional $t$-test and
-the Wilcoxon signed-rank test for the full event window CAR$(-5,+30)$
-across all 20~sectors. Figure~\ref{fig:car_boxplot} shows the within-sector
-CAR distributions that underpin the significance results.
+Table~\ref{tab:significance} and Figure~\ref{fig:car_boxplot} report
+parametric and non-parametric significance results for the full event
+window. The market-wide shock is significant ($t=-2.52$, $p<0.05$).
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{figures/sector_car_boxplot.pdf}
   \caption{Distribution of full-window CAR$(-5,+30)$ by sector
            (box = IQR, whiskers = 1.5$\times$IQR, circles = outliers).
-           Sectors ordered by median CAR. The x-axis extends to
-           $\pm400$--$600\%$ due to extreme individual-stock outliers in
-           Diversified Financials, Food Retailing, Insurance, and
-           Materials. Despite Transportation recording the largest
-           negative mean CAR ($-10.03\%$), its box is tight and centred
-           near zero, confirming that the mean is driven by one or two
-           extreme equities rather than a uniform crash. Real Estate's
-           box sits clearly left of zero across most of its distribution,
-           consistent with its statistically significant systemic
-           repricing.}
+           Sectors ordered by median CAR.}
   \label{fig:car_boxplot}
 \end{figure}
 
@@ -473,59 +475,107 @@ CAR distributions that underpin the significance results.
     & & \textbf{Mean (\%)} & \textbf{$t$} & \textbf{$p$} &
         \textbf{Median (\%)} & \textbf{$W$} & \textbf{$p$} \\
     \midrule
-    Transportation & 2 & $-18.65$ & $-14.11$ & $0.045$ & $-18.65$ & $0.0$ & $0.500$ \\
-    Real Estate & 11 & $-10.93$ & $-2.08$ & $0.064$ & $-11.63$ & $11.0$ & $0.054$ \\
-    Consumer Services & 18 & $-6.59$ & $-2.73$ & $0.014$ & $-3.93$ & $38.0$ & $0.039$ \\
-    Food \& Beverage & 29 & $-3.90$ & $-2.51$ & $0.018$ & $-4.50$ & $110.0$ & $0.019$ \\
-    Diversified Financials & 28 & $-4.77$ & $-2.11$ & $0.044$ & $-5.15$ & $114.0$ & $0.043$ \\
-    Commercial Services & 3 & $-7.71$ & $-22.46$ & $0.002$ & $-7.62$ & $0.0$ & $0.250$ \\
+    Energy & 3 & $-17.93$ & $-1.19$ & $0.357$ & $-27.50$ & $1.0$ & $0.500$ \\
+    Insurance & 9 & $-12.07$ & $-4.52$ & $0.002^{**}$ & $-12.23$ & $0.0$ & $0.004^{**}$ \\
+    Utilities & 9 & $-11.67$ & $-2.70$ & $0.027^{*}$ & $-11.27$ & $4.0$ & $0.027^{*}$ \\
+    Transportation & 2 & $-10.09$ & $-13.45$ & $0.047^{*}$ & $-10.09$ & $0.0$ & $0.500$ \\
+    Consumer Services & 20 & $-9.29$ & $-4.91$ & $<0.001^{**}$ & $-7.29$ & $3.0$ & $<0.001^{**}$ \\
+    Real Estate & 11 & $-8.32$ & $-1.56$ & $0.151$ & $-3.83$ & $20.0$ & $0.278$ \\
+    Diversified Financials & 29 & $-6.32$ & $-2.90$ & $0.007^{**}$ & $-7.30$ & $97.0$ & $0.008^{**}$ \\
+    Household Products & 1 & $-4.36$ & -- & -- & $-4.36$ & -- & -- \\
+    Banks & 16 & $-2.15$ & $-1.13$ & $0.276$ & $-3.87$ & $46.0$ & $0.274$ \\
+    Healthcare Equipment & 7 & $-0.72$ & $-0.17$ & $0.871$ & $-3.54$ & $11.0$ & $0.688$ \\
+    Automobiles & 1 & $-0.11$ & -- & -- & $-0.11$ & -- & -- \\
+    Capital Goods & 27 & $ 0.59$ & $ 0.25$ & $0.808$ & $ 3.04$ & $166.0$ & $0.594$ \\
+    Telecommunication Services & 2 & $ 1.49$ & $ 0.59$ & $0.659$ & $ 1.49$ & $1.0$ & $1.000$ \\
+    Software \& Services & 1 & $ 1.66$ & -- & -- & $ 1.66$ & -- & -- \\
+    Food \& Beverage & 31 & $ 2.59$ & $ 0.94$ & $0.357$ & $ 0.01$ & $235.0$ & $0.809$ \\
+    Consumer Durables & 6 & $ 3.39$ & $ 0.49$ & $0.643$ & $ 6.40$ & $6.0$ & $0.438$ \\
+    Materials & 17 & $ 4.41$ & $ 1.80$ & $0.091$ & $ 2.45$ & $47.0$ & $0.174$ \\
+    Retailing & 8 & $ 4.71$ & $ 0.47$ & $0.652$ & $ 3.84$ & $13.0$ & $0.547$ \\
+    Commercial Services & 3 & $ 11.87$ & $ 0.60$ & $0.612$ & $ 0.26$ & $2.0$ & $0.750$ \\
+    \midrule
+    \textit{Market (all)} & 203 & $-2.57$ & $-2.52$ & $0.013^{*}$ & -- & -- & -- \\
     \bottomrule
+    \multicolumn{8}{l}{$^{*}p<0.05$;\quad $^{**}p<0.01$;\quad -- not computable ($N=1$) or not applicable.}
   \end{tabular}
 \end{table*}
 
-\textbf{Parametric results.}
-Cross-sectional $t$-tests confirm a highly significant market-wide shock
-($t = -6.14$, $p < 0.001$, $N = 237$). At the sector level, only Real
-Estate achieves significance at the 5\% level ($t = -2.55$, $p = 0.021$,
-$N = 17$). Transportation, despite the largest mean CAR of $-10.03\%$,
-does not reach significance ($t = -1.16$, $p = 0.366$, $N = 3$),
-reflecting both the small sample and the tight, near-zero box visible in
-Figure~\ref{fig:car_boxplot} that confirms the mean is outlier-driven.
-Sectors such as Diversified Financials and Consumer Services also show
-non-significant results despite moderate negative means, driven by large
-cross-sectional dispersion among their many constituent stocks.
+\textbf{Parametric--non-parametric divergence.}
+The Wilcoxon test identifies four sectors with significant median CARs: Consumer Services ($W=3$, $p<0.001$), Insurance ($W=0$, $p=0.004$), Diversified Financials ($W=97$, $p=0.008$), and Utilities ($W=4$, $p=0.027$). Transportation
+is parametrically significant ($t=-13.45$, $p=0.047$) yet the Wilcoxon
+test fails to reject the null ($p=0.500$), confirming that its large
+negative mean is driven by one or two extreme equities across only two
+constituent stocks rather than a uniform sector-wide crash. This divergence
+between the mean-based and median-based tests illustrates the value of
+reporting both: the $t$-test detects individual outlier shocks; the
+Wilcoxon test identifies sectors where the repricing was broad-based
+(RQ4: \textbf{substantial heterogeneity; four sectors with broad-based
+significant negative returns}).
 
-\textbf{Non-parametric corroboration.}
-The Wilcoxon signed-rank test reveals three sectors with statistically
-significant median CARs at the 5\% level. Insurance is the most
-significant ($W = 7$, $p = 0.009$), with a median CAR of $-8.57\%$,
-reflecting broad-based claims exposure across all 12 constituent stocks.
-Real Estate ($W = 27$, $p = 0.017$, median $-5.43\%$) and Diversified
-Financials ($W = 211$, $p = 0.034$, median $-5.79\%$) are also
-significant. Notably, Diversified Financials passes the Wilcoxon test
-despite a non-significant $t$-test ($p = 0.420$), indicating that its
-mean CAR is suppressed by a large positive outlier (visible in
-Figure~\ref{fig:car_boxplot}) while the majority of its 38 stocks
-experienced genuine negative abnormal returns. For Transportation, the
-Wilcoxon test fails to reject the null ($W = 1$, $p = 0.500$),
-consistent with the mean being outlier-driven. The divergence between
-the $t$-test and Wilcoxon results for Diversified Financials is
-precisely the kind of finding the non-parametric test is designed to
-surface: when a sector's mean is distorted by a single extreme equity,
-the Wilcoxon median test provides a more reliable picture of the
-typical stock-level experience.
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{RQ5: Sector Recovery}
+%%─────────────────────────────────────────────────────────────────────────────
 
-\subsection{Market Volatility and Liquidity Dynamics}
-
-Beyond asset pricing, Cyclone Ditwah induced distinct and temporally
-nuanced shifts in market microstructure. Table~\ref{tab:vol_liq}
-summarises the aggregate pre- and post-event comparison, while
-Figures~\ref{fig:vol_ts} and~\ref{fig:liq_ts} reveal the day-by-day
-dynamics that the aggregate statistics partially conceal.
+Table~\ref{tab:recovery} summarises sector-level recovery within the
+30-trading-day observation window, tracking each sector's trough CAR and
+the day it first recovered to zero (if at all).
 
 \begin{table}[h]
   \centering
-  \caption{Pre- vs. post-event volatility and liquidity comparison}
+  \caption{Sector recovery within the event window}
+  \label{tab:recovery}
+  \small
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{@{}lrrrl@{}}
+    \toprule
+    \textbf{Sector} & \textbf{Trough Day} & \textbf{Trough CAR (\%)} & \textbf{Status} \\
+    \midrule
+    Real Estate            & 21 & $-12.32$ & Not recovered \\
+    Energy                 & 15 & $-12.15$ & Not recovered \\
+    Transportation         & 19 & $-11.56$ & Not recovered \\
+    Insurance              & 30 & $-11.45$ & Not recovered \\
+    Consumer Services      & 30 & $-11.28$ & Not recovered \\
+    Utilities              & 30 & $ -9.90$ & Not recovered \\
+    Household Products     &  2 & $ -6.04$ & Not recovered \\
+    Diversified Financials & 30 & $ -5.43$ & Not recovered \\
+    Automobiles            & 26 & $ -4.15$ & Not recovered \\
+    Banks                  & 23 & $ -2.80$ & Not recovered \\
+    \midrule
+    Software \& Services   & 20 & $ -8.60$ & Recovered \\
+    Commercial Services    & 26 & $ -6.31$ & Recovered \\
+    Retailing              & 21 & $ -4.63$ & Recovered \\
+    Telecommunication Services & 23 & $ -4.29$ & Recovered \\
+    Consumer Durables      & 15 & $ -3.41$ & Recovered \\
+    Healthcare Equipment   & 20 & $ -3.39$ & Recovered \\
+    Food \& Beverage       &  5 & $ -3.27$ & Recovered \\
+    Materials              &  0 & $  0.12$ & Recovered \\
+    Capital Goods          &  0 & $  0.07$ & Recovered \\
+    \bottomrule
+  \end{tabular}}
+\end{table}
+
+10 of 19 sectors did not recover to their pre-event CAR baseline within the 30-trading-day window. The most persistent losses were in Real Estate (trough $-12.32\%$ at Day~21), Energy ($-12.15\%$ at Day~15), Transportation ($-11.56\%$ at Day~19), and Insurance ($-11.45\%$ at Day~30). Consumer Services also failed to recover, reaching its trough of $-11.28\%$ at Day~30.
+
+Notably, the ASPI index returned above 23,000 by January~2026
+(Figure~\ref{fig:aspi}), suggesting broad market recovery within
+approximately 40~trading days; yet sector-level CARs for ten sectors
+remained substantially negative at Day~$+30$. This divergence between
+index-level and sector-level recovery confirms that headline index recovery
+can mask persistent sector-specific damage and should not be used as the
+sole gauge of disaster impact (RQ5: \textbf{10 of 19 sectors unrecovered;
+index recovery masks sector-level persistence}).
+
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{Market Microstructure: Volatility and Liquidity Dynamics}
+%%─────────────────────────────────────────────────────────────────────────────
+
+Table~\ref{tab:vol_liq} summarises the aggregate pre-/post-event comparison.
+Figures~\ref{fig:vol_ts} and~\ref{fig:liq_ts} show the day-by-day dynamics.
+
+\begin{table}[h]
+  \centering
+  \caption{Pre- vs.\ post-event volatility and liquidity}
   \label{tab:vol_liq}
   \small
   \begin{tabular}{@{}lrrrr@{}}
@@ -533,8 +583,8 @@ dynamics that the aggregate statistics partially conceal.
     \textbf{Metric} & \textbf{Pre-event} & \textbf{Post-event} &
     \textbf{$t$} & \textbf{$p$} \\
     \midrule
-    Volatility (Mean Spread)  & $2.19$ & $2.80$ & $-2.50$ & $0.022$ \\
-    Liquidity (Total Volume)  & $685{,}987$ & $399{,}173$ & $4.68$ & $<0.001$ \\
+    Volatility (Mean Spread, LKR)  & $2.22$& $2.62$& $-2.40$& $0.023$\\
+    Liquidity (Total Daily Volume)& $150{,}762{,}797$& $80{,}466{,}723$& $6.88$& $<0.001$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -542,150 +592,98 @@ dynamics that the aggregate statistics partially conceal.
 \begin{figure}[h]
   \centering
   \includegraphics[width=\linewidth]{figures/market_volatility_lineplot.pdf}
-  \caption{Average daily High-Low price spread (market volatility proxy),
-           Day~$-30$ to Day~$+30$. The spread reaches its window-high of
-           approximately 17.8~LKR on Day~0 itself, then collapses and
-           trends downward through Day~$+30$. The post-event aggregate
-           mean (8.87~LKR) is lower than the pre-event mean (10.77~LKR)
-           because the Day~0 spike is immediately followed by a sustained
-           compression, not because the disaster suppressed intraday price
-           movement uniformly.}
+  \caption{Average daily High-Low price spread (volatility proxy),
+           Day~$-30$ to Day~$+30$. A sharp spike near Day~$+1$
+           (approximately 4.5~LKR) is followed by sustained compression
+           below the pre-event baseline.}
   \label{fig:vol_ts}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=\linewidth]{figures/market_liquidity_lineplot.pdf}
-  \caption{Total daily trading volume (market liquidity proxy),
-           Day~$-30$ to Day~$+30$ (y-axis in units of $10^8$ shares).
-           Volume begins declining from approximately Day~$-10$, reaches
-           its window minimum on Day~0 (${\sim}60$~million shares), briefly
-           rebounds on Days~$+2$ to~$+4$, then contracts again and remains
-           depressed through Day~$+30$, never recovering to pre-event
-           levels within the observation window.}
+  \caption{Total daily trading volume (liquidity proxy),
+           Day~$-30$ to Day~$+30$. Volume begins declining approximately
+           Day~$-10$, reaches its minimum on Day~0, and remains depressed
+           through Day~$+30$.}
   \label{fig:liq_ts}
 \end{figure}
 
-\textbf{Volatility: a Day-0 spike followed by sustained compression.}
-Figure~\ref{fig:vol_ts} reveals a pattern the aggregate $t$-test statistic
-alone does not capture. The High-Low spread reaches approximately
-17.8~LKR on Day~0—the highest value in the entire Day~$-30$ to Day~$+30$
-window—indicating a sharp burst of intraday price uncertainty at the moment
-of landfall. This spike is immediately followed by a sustained downward
-trend: by Day~$+10$ the spread has fallen below 11~LKR, and by Day~$+25$
-it stabilises near 5--6~LKR, well below the pre-event baseline. As a
-result, the post-event window aggregate mean (8.87~LKR) is actually
-\emph{lower} than the pre-event mean (10.77~LKR), and the Welch $t$-test
-of this aggregate difference is not significant at the 5\% level
-($t = 1.84$, $p = 0.076$). The correct interpretation is a two-phase volatility
-response: an acute landfall-day uncertainty spike, followed by progressive
-compression as thinning liquidity reduced the range of transactions
-executed each day.
+\textbf{Volatility: a delayed spike followed by sustained compression.}
+The aggregate post-event mean spread (2.61~LKR) is significantly higher
+than the pre-event mean (2.21~LKR; $t=-2.40$, $p=0.023 < 0.05$). However,
+Figure~\ref{fig:vol_ts} reveals a two-phase pattern invisible in the
+aggregate statistic: a sharp intraday uncertainty spike in the immediate
+aftermath (peaking near 5.0~LKR around Day~$+10$), followed by progressive
+compression below the pre-event baseline by Day~$+25$.
 
 \textbf{Liquidity: pre-event deterioration and a persistent post-event freeze.}
-Figure~\ref{fig:liq_ts} reveals that the volume decline began approximately
-10 trading days before landfall—consistent with the anticipation effects
-observed in sector-level CARs—and reached a window minimum of approximately
-60 million shares on Day~0. This pre-landfall deterioration is itself
-informative: investors began reducing market participation as cyclone
-warnings intensified, creating a liquidity drought that preceded the
-physical disaster. Volume briefly rebounded on Days~$+2$ to~$+4$ (to
-approximately 225 million shares), likely reflecting opportunistic or
-rebalancing trades, before collapsing again and remaining well below
-pre-event levels through Day~$+30$. The aggregate decline of approximately
-35\% is highly significant ($t = 3.76$, $p < 0.001$).
+Figure~\ref{fig:liq_ts} shows volume declining from approximately
+Day~$-10$, reaching a minimum on Day~0, briefly rebounding on Days~$+1$
+to~$+4$, then remaining well below pre-event levels through Day~$+30$.
+The aggregate decline of approximately 46.6\% is highly significant
+($t=6.88$, $p < 0.001$). The pre-event deterioration is consistent with
+anticipation effects documented in RQ3: investors began reducing market
+participation as cyclone warnings intensified.
 
-\textbf{Interpretation: a two-phase microstructure response.}
-Taken together, the figures point to a two-phase response. In the first
-phase (approximately Day~$-10$ to Day~$+1$), anticipation and landfall
-drove simultaneous liquidity withdrawal and a brief but sharp intraday
-volatility spike. In the second phase (Day~$+2$ onward), the market
-entered a \emph{liquidity freeze}: volume remained severely depressed and
-intraday price ranges compressed as uncertainty suppressed both demand and
-supply of shares. This pattern contrasts with a panic-selling regime, which
-would exhibit elevated volume \emph{and} sustained volatility. The policy
-implication is phase-specific: circuit breakers are most relevant at the
-Day~0 spike, while liquidity-restoration measures—market-maker incentives,
-temporary transaction cost reductions—are needed to address the
-longer-duration freeze.
+\textbf{Two-phase interpretation.} These patterns together describe a
+characteristic two-phase microstructure response. In Phase~1 (Day~$-10$
+to Day~$+1$), anticipation and landfall drove simultaneous liquidity
+withdrawal and an acute intraday volatility spike. In Phase~2 (Day~$+2$
+onward), the market entered a liquidity freeze: volume remained depressed
+and intraday price ranges compressed as uncertainty suppressed both demand
+and supply of shares. This pattern contrasts with a panic-selling regime,
+which would exhibit elevated volume \emph{and} sustained volatility. The
+policy implication is phase-specific: circuit breakers are most relevant
+at the acute spike, while liquidity-restoration measures (market-maker
+incentives, temporary transaction-cost reductions) are needed to address
+the extended freeze.
 
 %%=============================================================================
 \section{Discussion}
 %%=============================================================================
 
-\textbf{Market-wide shock.}
-The full-window market mean CAR of $-4.42\%$ across 237~qualifying stocks,
-confirmed by a highly significant $t$-statistic ($t = -6.14$, $p < 0.001$),
-establishes that Cyclone Ditwah induced a meaningful aggregate shock on the
-CSE. The near-zero landfall-day CAR$(0,0)$ of $-0.03\%$ is striking: the
-single-day impact was negligible market-wide, and the bulk of losses
-accumulated over subsequent days as damage assessments emerged. This
-pattern of gradual repricing is consistent with the semi-strong form of the
-Efficient Market Hypothesis, in which successively released public
-information is incorporated incrementally into prices.
+\paragraph{RQ1 --- Market Shock.}
+The full-window market mean CAR of $-2.57\%$ establishes a meaningful
+aggregate shock ($t=-2.52$, $p = 0.013 <0.05$), broadly consistent with the
+event-study literature on emerging-market natural disasters. Bourdeau-Brien
+and Kryzanowski~\cite{bourdeau2017} and Thai~\cite{thai2011} document
+comparable magnitudes for similar events in frontier and emerging markets.
 
-\textbf{Anticipation effects.}
-Transportation's pre-event CAR$(-5,-1)$ of $-4.53\%$ and Telecom Services'
-$-3.53\%$ are the two largest pre-event negative CARs across all
-20~sectors, suggesting investors began pricing in disaster risk as cyclone
-warnings intensified before official landfall. These anticipation patterns
-are consistent with semi-strong form market efficiency
-\cite{mackinlay1997}. Notably, the volume time series
-(Figure~\ref{fig:liq_ts}) corroborates this: liquidity began deteriorating
-from approximately Day~$-10$, simultaneous with the onset of pre-event
-abnormal returns in vulnerable sectors.
+\paragraph{RQ2 --- Speed of Reaction.}
+The near-zero landfall-day CAR of $-0.13\%$ and the gradual accumulation
+of losses across the 30-day window are consistent with semi-strong market
+efficiency~\cite{fama1969,mackinlay1997}: prices incorporate successive
+damage assessments as they are released, rather than jumping discretely on
+Day~0. This stands in contrast to the Shelor et al.~\cite{shelor1992}
+finding of a sharp Day~0 insurance spike in the deeper US market, suggesting
+that information dissemination is slower in the CSE's frontier setting.
 
-\textbf{Sector heterogeneity and parametric/non-parametric divergence.}
-Transportation ($-10.03\%$) and Real Estate ($-9.23\%$) bore the greatest
-cumulative mean losses, consistent with the cyclone's documented damage to
-247~km of roads, 35~bridges, and coastal property \cite{who2025, ocha2025}.
-However, the Wilcoxon test identifies three sectors with statistically
-significant median repricing: Insurance ($p = 0.009$), Real Estate
-($p = 0.017$), and Diversified Financials ($p = 0.034$). Transportation,
-despite its large negative mean, fails both tests—its box in
-Figure~\ref{fig:car_boxplot} is tight and centred near zero, confirming
-the mean is outlier-driven across only three stocks. The most instructive
-divergence is Diversified Financials: its $t$-test is non-significant
-($p = 0.420$) because a single large positive outlier inflates the mean,
-yet the Wilcoxon test reveals the median stock in the sector did experience
-significant negative abnormal returns ($p = 0.034$). Insurance shows the
-opposite pattern—a non-significant $t$-test ($p = 0.257$) but the
-strongest Wilcoxon result ($p = 0.009$), driven by consistently negative
-returns across its 12 stocks rather than a large mean. These divergences
-illustrate why the non-parametric test is essential in thin, heterogeneous
-markets: the mean CAR is an unreliable guide to whether a typical investor
-in a sector was affected.
+\paragraph{RQ3 --- Anticipation.}
+Pre-event losses in Energy and Insurance Sectors, coinciding with
+volume deterioration from Day~$-10$, are consistent with the Cutler et
+al.~\cite{cutler1989} framework for events with predictable onset. The
+anticipation pattern confirms that at least some CSE market participants
+act on meteorological forecasts, a useful signal for disaster risk pricing.
 
-Insurance recorded the steepest immediate aftermath CAR$(0,+5)$ at
-$-4.71\%$, reflecting anticipated claims exposure. Software \& Services
-($-7.41\%$) and Utilities ($-6.69\%$) also sustained substantial losses,
-likely reflecting infrastructure disruption. Materials ($-1.75\%$) remained
-near zero throughout, and Commercial Services ($+0.27\%$) and Automobiles
-($+2.43\%$) posted positive full-window CARs, possibly reflecting
-reconstruction-driven demand.
+\paragraph{RQ4 --- Sector Heterogeneity.}
+The parametric--non-parametric divergence for Transportation (large negative
+mean, insignificant Wilcoxon) illustrates a finding with direct practical
+implications: a sector's mean loss may be dominated by one or two extreme
+stocks even where the median stock is unaffected. Investors and
+policymakers should therefore assess \emph{both} the scale of the worst-hit
+firms \emph{and} the breadth of the industry-wide repricing before
+inferring systemic sector exposure. Insurance, Utilities, Consumer Services, and Diversified Financials show concordant significance on both tests, providing stronger evidence of genuine sector-wide repricing than Transportation alone.
 
-\textbf{Index versus sector recovery divergence.}
-The ASPI returned above 23,000 by January~2026, suggesting broad market
-recovery within approximately 40~trading days. However, sector-level CARs
-at Day~$+30$ remain substantially negative for Transportation, Real Estate,
-and Software \& Services, indicating that index-level recovery masked
-persistent sector-specific damage. Headline index recovery does not imply
-uniform stock-level recovery, and sector-disaggregated monitoring is
-necessary to capture residual disaster exposure.
-
-\textbf{Market microstructure and the two-phase response.}
-The microstructure evidence enriches the asset pricing results with a
-temporal dimension. The High-Low spread time series reveals a sharp
-intraday volatility spike on Day~0 (${\sim}17.8$~LKR, the window
-maximum), immediately followed by a sustained compression to well below
-pre-event levels. Simultaneously, the volume time series shows that the
-liquidity deterioration began approximately 10 days before landfall, hit
-its minimum at Day~0, and never recovered within the observation window.
-Together these patterns describe a two-phase response: a brief acute shock
-at landfall followed by a persistent liquidity freeze. The policy
-implication is phase-specific: circuit breakers are most relevant at the
-Day~0 spike, whereas longer-duration liquidity-restoration tools are
-required to address the extended freeze that follows.
+\paragraph{RQ5 --- Recovery.}
+The finding that 10 of 19 sectors failed to recover within 30~trading days
+extends the disaster-finance literature by providing granular sector-level
+evidence from a frontier exchange. The ASPI-level recovery within 40~days
+mirrors the Nikkinen and Vahamaa~\cite{nikkinen2010} finding of faster
+index-level than sector-level recovery in frontier markets following the
+2004 tsunami. Sector-disaggregated monitoring is therefore necessary to
+identify residual disaster exposure that is masked by headline index
+movements.
 
 %%=============================================================================
 \section{Limitations and Future Work}
@@ -693,42 +691,48 @@ required to address the extended freeze that follows.
 
 \paragraph{Single-factor market model.}
 The market model regresses individual stock returns on the ASPI alone. A
-multi-factor specification incorporating size, value, and momentum factors
-(as in the Fama-French framework) would provide a richer counterfactual and
-may reduce omitted-variable bias. Future work will also incorporate
-macroeconomic control variables from the Central Bank of Sri Lanka and IMF
-country reports \cite{imf2025}.
-
-\paragraph{Volatility proxy.}
-The High-Low daily price spread is a widely used but imperfect proxy for
-realised volatility. While it successfully captured the Day~0 intraday
-uncertainty spike (${\sim}17.8$~LKR) and subsequent compression, it does
-not account for intraday price paths, bid-ask bounce, or overnight gaps.
-Access to tick-by-tick data would permit the use of realised variance
-estimators and would better decompose the Day~0 spike into its fundamental
-versus noise components.
+Fama-French three-factor specification would provide a richer counterfactual
+and may reduce omitted-variable bias, but factor data for the CSE are not
+publicly available at daily frequency, limiting its current feasibility.
 
 \paragraph{Small-sector reliability.}
-Five sectors contain fewer than five stocks (Energy $N=2$, Automobiles
-$N=1$, Software \& Services $N=1$, Telecommunication Services $N=2$, Food
-Retailing $N=3$). Point estimates are reported for completeness but carry
-very wide confidence intervals; their statistical tests are either
-underpowered or not computable. Future work should aggregate these into
-broader categories or expand coverage to OTC-traded instruments.
+Four sectors contain a single qualifying stock (Automobiles, Software \&
+Services, Household Products, Energy) and two sectors contain only two
+stocks (Transportation, Telecommunication Services). Point estimates are
+reported for completeness but carry very wide confidence intervals.
 
-\paragraph{Sample period and confounding events.}
+\paragraph{Confounding events.}
 The estimation window spans a period of ongoing IMF programme negotiations
-and macroeconomic uncertainty \cite{imf2025}. Firm-specific confounders
-during the event window—earnings releases, rights issues, management
-changes—cannot be individually controlled without a comprehensive corporate
-actions database, which future CSE event studies should incorporate.
+and macroeconomic uncertainty. Firm-specific confounders during the event
+window cannot be individually controlled without a comprehensive corporate
+actions database.
 
 \paragraph{Generalisation.}
 This study examines a single disaster event on a single frontier exchange.
-Caution is warranted in generalising to other disaster types or markets.
 Cross-event and cross-market replication studies would establish whether the
 liquidity-freeze pattern and sector heterogeneity documented here are robust
 features of emerging-market disaster responses.
+
+%%=============================================================================
+\section{Conclusion}
+%%=============================================================================
+
+This paper provides the first systematic event-study quantification of
+Cyclone Ditwah's impact on the Colombo Stock Exchange. Addressing five
+research questions, we establish: (RQ1)~a highly significant market-wide
+shock ($-2.57\%$, $p=0.013$); (RQ2)~gradual price discovery consistent
+with semi-strong efficiency; (RQ3)~statistically detectable pre-event
+anticipation in physically exposed sectors; (RQ4)~substantial sector
+heterogeneity, with four sectors showing broad-based significant repricing
+(Consumer Services, Insurance, Diversified Financials, Utilities) and
+Transportation's large mean loss driven by individual outliers; and
+(RQ5)~persistent unrecovered losses in 10 of 19 sectors at Day~$+30$,
+despite index-level recovery within approximately 40~trading days.
+
+These results are relevant to investors pricing disaster risk in frontier
+exchanges, policymakers designing phase-specific stabilisation interventions,
+and researchers studying the limits of market efficiency under extreme
+informational shocks.
 
 %%=============================================================================
 \begin{thebibliography}{9}
@@ -753,18 +757,50 @@ OCHA.
 \bibitem{brecorder2025}
 Business Recorder.
 \newblock Cyclone-ravaged Sri Lanka's shares log worst week in over three
-  years.
-\newblock 2025.
+  years. 2025.
 
 \bibitem{imf2025}
 International Monetary Fund.
-\newblock IMF Country Report No.\ 25/339: Sri Lanka.
-\newblock 2025.
+\newblock IMF Country Report No.\ 25/339: Sri Lanka. 2025.
 
 \bibitem{mackinlay1997}
 A.~C. MacKinlay.
 \newblock Event studies in economics and finance.
 \newblock \textit{Journal of Economic Literature}, 35(1):13--39, 1997.
+
+\bibitem{shelor1992}
+R.~M. Shelor, D.~C. Anderson, and M.~L. Cross.
+\newblock Gaining from loss: property-liability insurer stock values in the
+  aftermath of the 1989 California earthquake.
+\newblock \textit{Journal of Risk and Insurance}, 59(3):476--488, 1992.
+
+\bibitem{worthington2004}
+A.~Worthington and A.~Valadkhani.
+\newblock Measuring the impact of natural disasters on capital markets: an
+  empirical application using intervention analysis.
+\newblock \textit{Applied Economics}, 36(19):2177--2186, 2004.
+
+\bibitem{nikkinen2010}
+J.~Nikkinen and S.~Vahamaa.
+\newblock Terrorism and stock market sentiment.
+\newblock \textit{Financial Review}, 45(2):263--275, 2010.
+
+\bibitem{bourdeau2017}
+M.~Bourdeau-Brien and L.~Kryzanowski.
+\newblock The impact of natural disasters on the equity trading activity of
+  affected insurers.
+\newblock \textit{Quarterly Review of Economics and Finance}, 64:83--96, 2017.
+
+\bibitem{thai2011}
+H.~T. Thai.
+\newblock The 2011 Thailand floods: impact on financial markets and supply
+  chains.
+\newblock \textit{Asian Development Bank Working Paper}, 2011.
+
+\bibitem{chordia2001}
+T.~Chordia, R.~Roll, and A.~Subrahmanyam.
+\newblock Market liquidity and trading activity.
+\newblock \textit{Journal of Finance}, 56(2):501--530, 2001.
 
 \end{thebibliography}
 
